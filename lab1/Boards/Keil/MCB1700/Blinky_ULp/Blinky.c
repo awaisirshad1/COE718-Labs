@@ -14,11 +14,12 @@
 #include "GLCD.h"
 #include "LED.h"
 #include "Board_ADC.h" 
+#include "KBD.h"
 
-#define __FI        1                      /* Font index 16x24               */
-#define __USE_LCD   0										/* Uncomment to use the LCD */
+#define __FI        1                     //  Font index 16x24               
+#define __USE_LCD   0										// Uncomment to use the LCD 
 
-//ITM Stimulus Port definitions for printf //////////////////
+// ITM Stimulus Port definitions for printf //////////////////
 // ITM is the debug trace varible
 // take an argument n, using the base memory address  0xE0000000, offset it by 4*n spaces, cast it to a type volatile unsigned char 
 // and access the value at that address by referencing. 
@@ -37,9 +38,10 @@ struct __FILE { int handle;  };
 FILE __stdout;
 FILE __stdin;
 
-// put char in file pointed to by f, if DEMCR and TRCENA are not 0
+// send single character to output, in this case the debug output
 int fputc(int ch, FILE *f) {
-  if (DEMCR & TRCENA) {
+	
+  if (DEMCR & TRCENA) { //bitwise AND operation between DEMCR and TRCENA, earlier we specified TRCENA to be the 7th hex digit 
     while (ITM_Port32(0) == 0);
     ITM_Port8(0) = ch;
   }
@@ -47,13 +49,14 @@ int fputc(int ch, FILE *f) {
 }
 /////////////////////////////////////////////////////////
 
-char text[10];
-char text_l[10];
+char text[10]; //text to be sent to output
+char text_l[10]; //text previously contained in output
 
-static volatile uint16_t AD_dbg;
+static volatile uint16_t AD_dbg; //variable to set the AD value using debugger
 
 uint16_t ADC_last;                      // Last converted value
-/* Import external variables from IRQ.c file                                  */
+uint16_t direction_last;								// Last displayed direction
+// Import external variables from IRQ.c file                                  
 extern uint8_t  clock_ms;
 
 
@@ -62,18 +65,20 @@ extern uint8_t  clock_ms;
  *----------------------------------------------------------------------------*/
 int main (void) {
   int32_t  res;
+	int32_t joyStick;
   uint32_t AD_sum   = 0U;
   uint32_t AD_cnt   = 0U;
   uint32_t AD_value = 0U;
   uint32_t AD_print = 0U;
 
-  LED_Init();                                /* LED Initialization            */
-  ADC_Initialize();                                /* ADC Initialization            */
+  LED_Init();                               //  LED Initialization            
+  ADC_Initialize();                                // ADC Initialization           
+	KBD_Init();
 
 #ifdef __USE_LCD
-  GLCD_Init();                               /* Initialize graphical LCD (if enabled */
+  GLCD_Init();                               // Initialize graphical LCD (if enabled 
 
-  GLCD_Clear(White);                         /* Clear graphical LCD display   */
+  GLCD_Clear(White);                         // Clear graphical LCD display   
   GLCD_SetBackColor(Blue);
   GLCD_SetTextColor(Yellow);
   GLCD_DisplayString(0, 0, __FI, "     COE718 Demo    ");
@@ -86,14 +91,15 @@ int main (void) {
 #endif
 
   //SystemCoreClockUpdate();
-  SysTick_Config(SystemCoreClock/100);       /* Generate interrupt each 10 ms */
+  SysTick_Config(SystemCoreClock/100);        //Generate interrupt each 10 ms 
 
-  while (1) {                                /* Loop forever                  */
+  while (1) {                                // Loop forever                  
 
-    /* AD converter input                                                     */
+    // AD converter input                                                     
     // AD converter input
     res = ADC_GetValue();
-    if (res != -1) {                     // If conversion has finished
+		joyStick = get_button();
+ /*   if (res != -1) {                     // If conversion has finished
       ADC_last = (uint16_t)res;
       
       AD_sum += ADC_last;                // Add AD value to sum
@@ -103,8 +109,12 @@ int main (void) {
         AD_sum = 0U;
       }
     }
+		*/
+		if(joyStick != -1){
+			direction_last = (uint16_t)joyStick; 
+		}
 
-    if (AD_value != AD_print) {
+ /*   if (AD_value != AD_print) {
       AD_print = AD_value;               // Get unscaled value for printout
       AD_dbg   = (uint16_t)AD_value;
 
@@ -115,15 +125,36 @@ int main (void) {
       GLCD_SetTextColor(Red);
       GLCD_DisplayString(6,  9, __FI,  (unsigned char *)text);
 			GLCD_SetTextColor(Green);
-      GLCD_Bargraph (144, 7*24, 176, 20, (AD_value >> 2)); /* max bargraph is 10 bit */
+      GLCD_Bargraph (144, 7*24, 176, 20, (AD_value >> 2)); // max bargraph is 10 bit 
 #endif
     }
+		*/
+		fprintf(stdout, "joyStick: %c",joyStick);
 
-    /* Print message with AD value every 10 ms                               */
+    // Print message with AD value every 10 ms                               
     if (clock_ms) {
       clock_ms = 0;
 
       printf("AD value: %s\r\n", text);
     }
+		
+		switch(joyStick){
+			case KBD_SELECT:
+				printf("selected");
+				break;
+			case KBD_UP:
+				printf("UP");
+				break;
+			case KBD_DOWN:
+				printf("DOWN");
+				break;
+			case KBD_LEFT:
+				printf("LEFT");
+				break;
+			case KBD_RIGHT:
+				printf("RIGHT");
+				break;
+				
+		}
   }
 }
