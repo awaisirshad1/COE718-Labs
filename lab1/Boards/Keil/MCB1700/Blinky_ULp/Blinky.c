@@ -16,32 +16,23 @@
 #include "Board_ADC.h" 
 #include "KBD.h"
 
-#define __FI        1                     //  Font index 16x24               
-#define __USE_LCD   0										// Uncomment to use the LCD 
+#define __FI        1                      /* Font index 16x24               */
+//#define __USE_LCD   0										/* Uncomment to use the LCD */
 
-// ITM Stimulus Port definitions for printf //////////////////
-// ITM is the debug trace varible
-// take an argument n, using the base memory address  0xE0000000, offset it by 4*n spaces, cast it to a type volatile unsigned char 
-// and access the value at that address by referencing. 
-#define ITM_Port8(n)    (*((volatile unsigned char *)(0xE0000000+4*n))) 
+//ITM Stimulus Port definitions for printf //////////////////
+#define ITM_Port8(n)    (*((volatile unsigned char *)(0xE0000000+4*n)))
 #define ITM_Port16(n)   (*((volatile unsigned short*)(0xE0000000+4*n)))
 #define ITM_Port32(n)   (*((volatile unsigned long *)(0xE0000000+4*n)))
 
-// declare macro under the name DEMCR, long integer, probably 32 bits, at the memory address 0xE000EDFC
-// 0xE000EDFC is the debug exception and monitor control register of an ARM Cortex-M processors
 #define DEMCR           (*((volatile unsigned long *)(0xE000EDFC)))
-// is the trace enable register for ARM Cortex-M processors
 #define TRCENA          0x01000000
 
-// define a struct of 
 struct __FILE { int handle;  };
 FILE __stdout;
 FILE __stdin;
 
-// send single character to output, in this case the debug output
 int fputc(int ch, FILE *f) {
-	
-  if (DEMCR & TRCENA) { //bitwise AND operation between DEMCR and TRCENA, earlier we specified TRCENA to be the 7th hex digit 
+  if (DEMCR & TRCENA) {
     while (ITM_Port32(0) == 0);
     ITM_Port8(0) = ch;
   }
@@ -49,15 +40,15 @@ int fputc(int ch, FILE *f) {
 }
 /////////////////////////////////////////////////////////
 
-char text[10]; //text to be sent to output
-char text_l[10]; //text previously contained in output
+char text[10];
+char text_l[10];
 
-char direction_last[15];
-static volatile uint16_t AD_dbg; //variable to set the AD value using debugger
+static volatile uint16_t AD_dbg;
+//static volatile uint32_t joyStick_dbg;
+uint32_t joyStick_dbg;
 
 uint16_t ADC_last;                      // Last converted value
-//uint16_t direction_last;								// Last displayed direction
-// Import external variables from IRQ.c file                                  
+/* Import external variables from IRQ.c file                                  */
 extern uint8_t  clock_ms;
 
 
@@ -66,163 +57,102 @@ extern uint8_t  clock_ms;
  *----------------------------------------------------------------------------*/
 int main (void) {
 	uint32_t joyStick;
-	//uint32_t joystick_last = 0U;
-	//uint32_t joystick_initial = 0U;
 	
+	uint16_t ledToTurnOn = 3U;
 
-	
-  LED_Init();                               //  LED Initialization
+  LED_Init();                                /* LED Initialization            */
+  ADC_Initialize();                                /* ADC Initialization            */
 	KBD_Init();
 
 #ifdef __USE_LCD
-  GLCD_Init();                               // Initialize graphical LCD (if enabled 
+  GLCD_Init();                               /* Initialize graphical LCD (if enabled */
 
-  GLCD_Clear(White);                         // Clear graphical LCD display   
-  GLCD_SetBackColor(Blue);
-  GLCD_SetTextColor(Yellow);
-  GLCD_DisplayString(0, 0, __FI,(unsigned char *)"     COE718 Demo    ");
+  GLCD_Clear(White);                         /* Clear graphical LCD display   */
+  GLCD_SetBackColor(Red);
+  GLCD_SetTextColor(White);
+  GLCD_DisplayString(0, 0, __FI, "     COE718 Lab 1   ");
 	GLCD_SetTextColor(White);
-  GLCD_DisplayString(1, 0, __FI,(unsigned char *)"       Blinky.c     ");
-  GLCD_DisplayString(2, 0, __FI,(unsigned char *)"  Use Joystick   ");
+  GLCD_DisplayString(1, 0, __FI, "       Blinky.c     ");
+  GLCD_DisplayString(2, 0, __FI, "    Use joystick   ");
   GLCD_SetBackColor(White);
-  GLCD_SetTextColor(Blue);
-	GLCD_DisplayString(5, 9, __FI, (unsigned char *)"none");
+  GLCD_SetTextColor(Black);
+  GLCD_DisplayString(5, 0, __FI, " direction: ");
 #endif
 
-	
   //SystemCoreClockUpdate();
-  SysTick_Config(SystemCoreClock/100);        //Generate interrupt each 10 ms 
+  SysTick_Config(SystemCoreClock/100);       /* Generate interrupt each 10 ms */
 
-  while (1) {                                // Loop forever                  
-		
-		joyStick = get_button();
-		
+  while (1) {                                /* Loop forever                  */
+
+		//joystick_motion = get_button(); 
+		joyStick = joyStick_dbg;	
+		sprintf(text, "0x%08X", joyStick); // format text for print out*/
+   		
 		if(joyStick == KBD_SELECT){
+			ledToTurnOn = 3U;
 			#ifdef __USE_LCD
 				GLCD_ClearLn(5, __FI);
 				GLCD_SetTextColor(Red);
-				GLCD_DisplayString(5,9, __FI, (unsigned char *)"SELECT");
+				GLCD_DisplayString(5,5, __FI, (unsigned char *)"SELECT");
 			#endif
+			
+			sprintf(text_l, "SELECT");
 		}
 		else if(joyStick == KBD_DOWN){
-			
+			LED_Off(ledToTurnOn);
+			ledToTurnOn = 7U;
 			#ifdef __USE_LCD
 				GLCD_ClearLn(5, __FI);
 				GLCD_SetTextColor(Red);
-				GLCD_DisplayString(5,9, __FI,(unsigned char *)"DOWN");
+				GLCD_DisplayString(5,5, __FI,(unsigned char *)"DOWN");
 			#endif
+			
+			sprintf(text_l, "DOWN");
 		}
 		else if(joyStick == KBD_UP){
-			LED_On(2);
+			LED_Off(ledToTurnOn);
+			ledToTurnOn = 0U;
 			#ifdef __USE_LCD
 				GLCD_ClearLn(5, __FI);
 				GLCD_SetTextColor(Red);
-				GLCD_DisplayString(5,9, __FI, (unsigned char *)"UP");
+				GLCD_DisplayString(5,5, __FI, (unsigned char *)"UP");
 			#endif
+			
+			sprintf(text_l, "UP");
 		}
 		else if(joyStick == KBD_RIGHT){
+			LED_Off(ledToTurnOn);
+			ledToTurnOn = 4U;
 			#ifdef __USE_LCD
 				GLCD_ClearLn(5, __FI);
 				GLCD_SetTextColor(Red);
-				GLCD_DisplayString(5,9, __FI, (unsigned char *)"RIGHT");
+				GLCD_DisplayString(5,5, __FI, (unsigned char *)"RIGHT");
 			#endif
+			
+			sprintf(text_l, "RIGHT");
 		}
 		else if(joyStick == KBD_LEFT){
+			LED_Off(ledToTurnOn);
+			ledToTurnOn = 5U;
 			#ifdef __USE_LCD
 				GLCD_ClearLn(5, __FI);
 				GLCD_SetTextColor(Red);
-				GLCD_DisplayString(5,9, __FI, (unsigned char *)"LEFT");
+				GLCD_DisplayString(5,5, __FI, (unsigned char *)"LEFT");
 			#endif
+			
+			sprintf(text_l, "LEFT");
 		}
 		else{
-			GLCD_DisplayString(6,9,__FI, (unsigned char *)"test2");
+			GLCD_DisplayString(5,5,__FI, (unsigned char *)"NONE");
 		}
+		LED_On(ledToTurnOn);
 		
-		/*
-		switch(joyStick){
-			case KBD_SELECT:
-				#ifdef __USE_LCD
-					GLCD_Clear(White);                         // Clear graphical LCD display   
-					GLCD_SetBackColor(Blue);
-					GLCD_SetTextColor(Yellow);
-					GLCD_DisplayString(0, 0, __FI, "     COE718 Demo    ");
-					GLCD_SetTextColor(White);
-					GLCD_DisplayString(1, 0, __FI, "       Blinky.c     ");
-					GLCD_DisplayString(2, 0, __FI, "  Use Joystick   ");
-					GLCD_SetBackColor(White);
-					GLCD_SetTextColor(Blue);
-				
-					GLCD_DisplayString(6,0, __FI, (unsigned char *)"direction: Select");
-			
-				#endif	
-				break;
-			case KBD_UP:
-				#ifdef __USE_LCD
-					GLCD_Clear(White);                         // Clear graphical LCD display   
-					GLCD_SetBackColor(Blue);
-					GLCD_SetTextColor(Yellow);
-					GLCD_DisplayString(0, 0, __FI, "     COE718 Demo    ");
-					GLCD_SetTextColor(White);
-					GLCD_DisplayString(1, 0, __FI, "       Blinky.c     ");
-					GLCD_DisplayString(2, 0, __FI, "  Use Joystick   ");
-					GLCD_SetBackColor(White);
-					GLCD_SetTextColor(Blue);
-				
-					GLCD_DisplayString(6,0, __FI, (unsigned char *)"direction: UP");
-				#endif
-				break;
-			case KBD_DOWN:
-				#ifdef __USE_LCD
-					GLCD_Clear(White);                         // Clear graphical LCD display   
-					GLCD_SetBackColor(Blue);
-					GLCD_SetTextColor(Yellow);
-					GLCD_DisplayString(0, 0, __FI, "     COE718 Demo    ");
-					GLCD_SetTextColor(White);
-					GLCD_DisplayString(1, 0, __FI, "       Blinky.c     ");
-					GLCD_DisplayString(2, 0, __FI, "  Use Joystick   ");
-					GLCD_SetBackColor(White);
-					GLCD_SetTextColor(Blue);
-				
-					GLCD_DisplayString(6,0, __FI,(unsigned char *)"direction: DOWN");
-				#endif	
-				break;
-			case KBD_LEFT:
-				#ifdef __USE_LCD
-					GLCD_Clear(White);                         // Clear graphical LCD display   
-					GLCD_SetBackColor(Blue);
-					GLCD_SetTextColor(Yellow);
-					GLCD_DisplayString(0, 0, __FI, "     COE718 Demo    ");
-					GLCD_SetTextColor(White);
-					GLCD_DisplayString(1, 0, __FI, "       Blinky.c     ");
-					GLCD_DisplayString(2, 0, __FI, "  Use Joystick   ");
-					GLCD_SetBackColor(White);
-					GLCD_SetTextColor(Blue);
-				
-					GLCD_DisplayString(6,0, __FI, (unsigned char *)"direction: LEFT");
-				#endif
-				break;
-			case KBD_RIGHT:
-				#ifdef __USE_LCD
-					GLCD_Clear(White);                         // Clear graphical LCD display   
-					GLCD_SetBackColor(Blue);
-					GLCD_SetTextColor(Yellow);
-					GLCD_DisplayString(0, 0, __FI, "     COE718 Demo    ");
-					GLCD_SetTextColor(White);
-					GLCD_DisplayString(1, 0, __FI, "       Blinky.c     ");
-					GLCD_DisplayString(2, 0, __FI, "  Use Joystick   ");
-					GLCD_SetBackColor(White);
-					GLCD_SetTextColor(Blue);
-				
-					GLCD_DisplayString(6,0, __FI, (unsigned char *)"direction: RIGHT");
-				#endif
-				break;
-		}*/
-		
-		
-	}
-	if (clock_ms) {
+    /* Print message with AD value every 10 ms                               */
+    if (clock_ms) {
       clock_ms = 0;
-
-      printf("AD value: %s\r\n", text);
+      printf("KBD from get_button: %s\r\n", text);
+			printf("direction: %s\r\n", text_l);
     }
+		
+  }
 }
