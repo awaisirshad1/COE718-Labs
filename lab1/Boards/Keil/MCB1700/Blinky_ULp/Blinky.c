@@ -17,7 +17,7 @@
 #include "KBD.h"
 
 #define __FI        1                      /* Font index 16x24               */
-//#define __USE_LCD   0										/* Uncomment to use the LCD */
+#define __USE_LCD   0										/* Uncomment to use the LCD */
 
 //ITM Stimulus Port definitions for printf //////////////////
 #define ITM_Port8(n)    (*((volatile unsigned char *)(0xE0000000+4*n)))
@@ -57,7 +57,7 @@ extern uint8_t  clock_ms;
  *----------------------------------------------------------------------------*/
 int main (void) {
 	uint32_t joyStick;
-	
+	uint32_t joyStickPrev = 0U;
 	uint16_t ledToTurnOn = 3U;
 
   LED_Init();                                /* LED Initialization            */
@@ -76,19 +76,24 @@ int main (void) {
   GLCD_DisplayString(2, 0, __FI, "    Use joystick   ");
   GLCD_SetBackColor(White);
   GLCD_SetTextColor(Black);
-  GLCD_DisplayString(5, 0, __FI, " direction: ");
+  GLCD_DisplayString(4, 0, __FI, " direction: ");
 #endif
 
   //SystemCoreClockUpdate();
-  SysTick_Config(SystemCoreClock/100);       /* Generate interrupt each 10 ms */
-
+  //SysTick_Config(SystemCoreClock/100);       /* Generate interrupt each 10 ms */
+#ifdef __USE_LCD
+	GLCD_SetTextColor(Red);
+	GLCD_DisplayString(5,5, __FI,(unsigned char *)"NONE");
+#endif
   while (1) {                                /* Loop forever                  */
 
-		//joystick_motion = get_button(); 
-		joyStick = joyStick_dbg;	
+		joyStick = get_button(); 
+		//joyStick = joyStick_dbg;	
 		sprintf(text, "0x%08X", joyStick); // format text for print out*/
    		
-		if(joyStick == KBD_SELECT){
+		if(joyStick == KBD_SELECT && joyStick!=joyStickPrev){
+			joyStickPrev = joyStick;
+			LED_Off(ledToTurnOn);
 			ledToTurnOn = 3U;
 			#ifdef __USE_LCD
 				GLCD_ClearLn(5, __FI);
@@ -98,7 +103,8 @@ int main (void) {
 			
 			sprintf(text_l, "SELECT");
 		}
-		else if(joyStick == KBD_DOWN){
+		else if(joyStick == KBD_DOWN && joyStick!=joyStickPrev){
+			joyStickPrev = joyStick;
 			LED_Off(ledToTurnOn);
 			ledToTurnOn = 7U;
 			#ifdef __USE_LCD
@@ -109,7 +115,8 @@ int main (void) {
 			
 			sprintf(text_l, "DOWN");
 		}
-		else if(joyStick == KBD_UP){
+		else if(joyStick == KBD_UP && joyStick!=joyStickPrev){
+			joyStickPrev = joyStick;
 			LED_Off(ledToTurnOn);
 			ledToTurnOn = 0U;
 			#ifdef __USE_LCD
@@ -120,7 +127,8 @@ int main (void) {
 			
 			sprintf(text_l, "UP");
 		}
-		else if(joyStick == KBD_RIGHT){
+		else if(joyStick == KBD_RIGHT && joyStick!=joyStickPrev){
+			joyStickPrev = joyStick;
 			LED_Off(ledToTurnOn);
 			ledToTurnOn = 4U;
 			#ifdef __USE_LCD
@@ -131,7 +139,8 @@ int main (void) {
 			
 			sprintf(text_l, "RIGHT");
 		}
-		else if(joyStick == KBD_LEFT){
+		else if(joyStick == KBD_LEFT && joyStick!=joyStickPrev){
+			joyStickPrev = joyStick;
 			LED_Off(ledToTurnOn);
 			ledToTurnOn = 5U;
 			#ifdef __USE_LCD
@@ -142,9 +151,7 @@ int main (void) {
 			
 			sprintf(text_l, "LEFT");
 		}
-		else{
-			GLCD_DisplayString(5,5,__FI, (unsigned char *)"NONE");
-		}
+		
 		LED_On(ledToTurnOn);
 		
     /* Print message with AD value every 10 ms                               */
