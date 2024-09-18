@@ -17,7 +17,7 @@
 #include "KBD.h"
 
 #define __FI        1                      /* Font index 16x24               */
-#define __USE_LCD   0										/* Uncomment to use the LCD */
+//#define __USE_LCD   0										/* Uncomment to use the LCD */
 
 //ITM Stimulus Port definitions for printf //////////////////
 #define ITM_Port8(n)    (*((volatile unsigned char *)(0xE0000000+4*n)))
@@ -81,6 +81,8 @@ int main (void) {
 
   //SystemCoreClockUpdate();
   //SysTick_Config(SystemCoreClock/100);       /* Generate interrupt each 10 ms */
+	// uses the system timre to generate interrupts specified by the ticks, reloads the timer upon interrupts using a logic OR, accounts for interrupt priority
+	// The SysTick_Config function initializes the system timer to generate periodic interrupts at a specified tick interval. It configures the timer's reload value, sets the interrupt priority, and enables the timer, returning 0 on success or 1 if the tick value is invalid.
 #ifdef __USE_LCD
 	GLCD_SetTextColor(Red);
 	GLCD_DisplayString(5,5, __FI,(unsigned char *)"NONE");
