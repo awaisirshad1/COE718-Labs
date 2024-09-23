@@ -1,12 +1,18 @@
 #include "LPC17xx.h"
 #include <stdio.h>
 
-//------- ITM Stimulus Port definitions for printf ------------------- //
+// ITM Stimulus Port definitions for printf //////////////////
+// ITM is the debug trace varible
+// take an argument n, using the base memory address  0xE0000000, offset it by 4*n spaces, cast it to a type volatile unsigned char 
+// and access the value at that address by referencing. 
 #define ITM_Port8(n)    (*((volatile unsigned char *)(0xE0000000+4*n)))
 #define ITM_Port16(n)   (*((volatile unsigned short*)(0xE0000000+4*n)))
 #define ITM_Port32(n)   (*((volatile unsigned long *)(0xE0000000+4*n)))
 
+// declare macro under the name DEMCR, long integer, probably 32 bits, at the memory address 0xE000EDFC
+// 0xE000EDFC is the debug exception and monitor control register of an ARM Cortex-M processors
 #define DEMCR           (*((volatile unsigned long *)(0xE000EDFC)))
+// is the trace enable register for ARM Cortex-M processors
 #define TRCENA          0x01000000
 
 struct __FILE { int handle;  };
