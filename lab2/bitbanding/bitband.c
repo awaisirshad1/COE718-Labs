@@ -36,6 +36,7 @@ volatile unsigned long * bit;
 #define ADCR_Bit24   (*((volatile unsigned long *)0x42680060))
 
 int main(void){
+	printf("\n ADCR before any operations: 0x%08X \n", LPC_ADC->ADCR);
 //mask mode
 	printf("\nMask mode\n");
   LPC_ADC->ADCR |=  ( 1 << 24);              // start conversion    
