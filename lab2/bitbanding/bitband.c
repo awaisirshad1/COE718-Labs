@@ -43,7 +43,7 @@ int main(void){
 	printf("Addr: 0x%08X \n", LPC_ADC->ADCR);
   LPC_ADC->ADCR &= ~( 7 << 24);              // stop conversion     
 	printf("Addr: 0x%08X \n", LPC_ADC->ADCR);
-	
+	// 360 us
 	//function mode	
 	printf("\nfunction mode\n");
   bit = &BitBand(&LPC_ADC->ADCR, 24);		
@@ -53,14 +53,14 @@ int main(void){
 	printf("Addr: 0x%08X \n", LPC_ADC->ADCR);
  *bit = 0;
 	printf("Addr: 0x%08X \n", LPC_ADC->ADCR);
-	
+	// 330 us
 	//bit band mode
 	printf("\nBit Masking mode\n");
 	ADCR_Bit24 = 1;
 	printf("Addr: 0x%08X \n", LPC_ADC->ADCR);
 	ADCR_Bit24  = 0;
 	printf("Addr: 0x%08X \n", LPC_ADC->ADCR);
-	
+	// 290 us
 	return 0;
 }
 
