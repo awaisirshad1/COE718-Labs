@@ -1,5 +1,6 @@
 --cpu Cortex-M3
 ".\objects\lab_assignment.o"
+".\objects\glcd_spi_lpc1700.o"
 ".\objects\led_mcb1700.o"
 ".\objects\eventrecorder.o"
 ".\objects\gpio_lpc17xx.o"
