@@ -1,6 +1,6 @@
 Dependencies for Project 'Blinky', Target 'SWO Trace': (DO NOT MODIFY !)
 CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARMCC
-F (.\Blinky.c)(0x66EAD996)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_SWO_Trace-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\RTE_Driver-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.12.0\Board-D__UVISION_VERSION="531" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\swo_trace\blinky.o --omf_browse .\swo_trace\blinky.crf --depend .\swo_trace\blinky.d)
+F (.\Blinky.c)(0x66F411D0)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_SWO_Trace-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\RTE_Driver-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.12.0\Board-D__UVISION_VERSION="531" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\swo_trace\blinky.o --omf_browse .\swo_trace\blinky.crf --depend .\swo_trace\blinky.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC81EBC)
 I (Blinky.h)(0x631E561E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC81EBC)
@@ -98,7 +98,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC81EBC)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5EC81EBC)
 I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x5EC81EBC)
 I (C:\Keil_v5\ARM\ARMCC\include\rt_sys.h)(0x5EC81EBC)
-I (.\RTE\_SWO_Trace\RTE_Components.h)(0x66EAC295)
+I (.\RTE\_SWO_Trace\RTE_Components.h)(0x66F2E890)
 F (C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\RTE_Driver\GPIO_LPC17xx.c)(0x5D5C2A1A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_SWO_Trace-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\RTE_Driver-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.12.0\Board-D__UVISION_VERSION="531" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\swo_trace\gpio_lpc17xx.o --omf_browse .\swo_trace\gpio_lpc17xx.crf --depend .\swo_trace\gpio_lpc17xx.d)
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\RTE_Driver\GPIO_LPC17xx.h)(0x5D5C2A1A)
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x584985E2)

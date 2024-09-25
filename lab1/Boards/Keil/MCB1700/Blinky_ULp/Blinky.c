@@ -17,7 +17,7 @@
 #include "KBD.h"
 
 #define __FI        1                      /* Font index 16x24               */
-//#define __USE_LCD   0										/* Uncomment to use the LCD */
+#define __USE_LCD   0										/* Uncomment to use the LCD */
 
 //ITM Stimulus Port definitions for printf //////////////////
 #define ITM_Port8(n)    (*((volatile unsigned char *)(0xE0000000+4*n)))

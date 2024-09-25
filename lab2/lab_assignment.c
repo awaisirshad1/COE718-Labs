@@ -5,7 +5,7 @@
 
 
 #define __FI        1                      /* Font index 16x24               */
-//#define __USE_LCD   0										/* Uncomment to use the LCD */
+#define __USE_LCD   0										/* Uncomment to use the LCD */
 
 
 //ITM Stimulus Port definitions for printf //////////////////
