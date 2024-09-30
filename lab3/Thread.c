@@ -6,7 +6,7 @@
  *---------------------------------------------------------------------------*/
  unsigned int counta=0;
 unsigned int countb=0;
- 
+/* 
   
 void Thread1 (void const *argument); // thread function
 void Thread2 (void const *argument); // thread function
@@ -41,3 +41,4 @@ void Thread1 (void const *argument) {
      
   }                                          
 }
+*/
