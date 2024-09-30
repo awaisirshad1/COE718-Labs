@@ -211,7 +211,7 @@
             <Ra2Chk>0</Ra2Chk>
             <Ra3Chk>0</Ra3Chk>
             <Im1Chk>1</Im1Chk>
-            <Im2Chk>0</Im2Chk>
+            <Im2Chk>1</Im2Chk>
             <OnChipMemories>
               <Ocm1>
                 <Type>0</Type>
@@ -1381,6 +1381,14 @@
         </targetInfos>
       </component>
       <component Capiversion="1.0.0" Cbundle="MCB1700" Cclass="Board Support" Cgroup="A/D Converter" Cvendor="Keil" Cversion="1.0.0" condition="LPC1700 CMSIS PIN">
+        <package name="LPC1700_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="2.6.0"/>
+        <targetInfos>
+          <targetInfo name="Instruction Trace"/>
+          <targetInfo name="SWO Trace"/>
+          <targetInfo name="TracePort Trace"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Device" Cgroup="GPIO" Cvendor="Keil" Cversion="1.1.0" condition="LPC1700 CMSIS Device">
         <package name="LPC1700_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="2.6.0"/>
         <targetInfos>
           <targetInfo name="Instruction Trace"/>
