@@ -4,8 +4,8 @@
 
 #define osObjectsPublic                     // define objects in main module
 #define __FI        1                      /* Font index 16x24               */
-//#define __USE_LCD   0										/* Uncomment to use the LCD */
-// #define __USE_LED 0
+#define __USE_LCD   0										/* Uncomment to use the LCD */
+#define __USE_LED 0
 
 #include "osObjects.h"                      // RTOS object definitions
 #include "LPC17xx.h"                       
