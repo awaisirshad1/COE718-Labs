@@ -22,20 +22,22 @@ void ThreadE (void const *argument); // thread for task E
 // Priority order: C > A, D > B, E
 
 
-osThreadId tid_A_Thread; // thread id
-osThreadDef (ThreadA, osPriorityNormal, 1, 0);                   // thread object
+
 
 osThreadId tid_B_Thread; // thread id
 osThreadDef (ThreadB, osPriorityBelowNormal, 1, 0);                   // thread object
 
-osThreadId tid_C_Thread; // thread id
-osThreadDef (ThreadC, osPriorityAboveNormal, 1, 0);                   // thread object
+osThreadId tid_E_Thread; // thread id
+osThreadDef (ThreadE, osPriorityBelowNormal, 1, 0);                   // thread object
 
 osThreadId tid_D_Thread; // thread id
 osThreadDef (ThreadD, osPriorityNormal, 1, 0);                   // thread object
 
-osThreadId tid_E_Thread; // thread id
-osThreadDef (ThreadE, osPriorityBelowNormal, 1, 0);                   // thread object
+osThreadId tid_A_Thread; // thread id
+osThreadDef (ThreadA, osPriorityNormal, 1, 0);                   // thread object
+
+osThreadId tid_C_Thread; // thread id
+osThreadDef (ThreadC, osPriorityAboveNormal, 1, 0);                   // thread object
 
 int Init_Thread (void) {
 

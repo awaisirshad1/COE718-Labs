@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'lab2' 
+ * Project: 'Bitband' 
  * Target:  'Target 1' 
  */
 
