@@ -25,7 +25,7 @@ const unsigned long led_mask[] = { 1UL<<28, 1UL<<29, 1UL<<31, 1UL<< 2,
 
 void LED_Init (void) {
 
-  //LPC_SC->PCONP     |= (1 << 15);            /* enable power to GPIO & IOCON  */
+  LPC_SC->PCONP     |= (1 << 15);            /* enable power to GPIO & IOCON  */
 
   LPC_GPIO1->FIODIR |= 0xB0000000;           /* LEDs on PORT1 are output      */
   LPC_GPIO2->FIODIR |= 0x0000007C;           /* LEDs on PORT2 are output      */

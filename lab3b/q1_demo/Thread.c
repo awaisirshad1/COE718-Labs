@@ -8,10 +8,14 @@ unsigned int factorial(unsigned int n);
 double pi_r_squared(int r);
 void delay(int value);
 void turnOffAllLeds(void);
+double powerAndFactorial(int base, int exponent, int fact);
 
-#define GPIO_PORT1_LED30 (*((volatile unsigned long *)0x233806F8))
-#define GPIO_PORT2_LED4 (*((volatile unsigned long *)0x23380A90))
-#define GPIO_PORT
+#define GPIO_PORT1_LED28 (*((volatile unsigned long *)0x233806F4))
+#define GPIO_PORT1_LED29 (*((volatile unsigned long *)0x233806FC))
+#define GPIO_PORT1_LED31 (*((volatile unsigned long *)0x233806F0))
+#define GPIO_PORT2_LED2 (*((volatile unsigned long *)0x23380A88))
+#define GPIO_PORT2_LED3 (*((volatile unsigned long *)0x23380A8C))
+//#define bitBandBase 0x23380680
 
 
 /*----------------------------------------------------------------------------
@@ -78,7 +82,6 @@ void ThreadA (void const *argument) {
 		//delay(100);
   }
 	
-	printf("final result for thread A: a = %d", a);
 	// try yielding instead of terminating
 	osThreadYield();
 	
@@ -92,7 +95,8 @@ void ThreadB (void const *argument) {
 
 	double b = 0;
 	unsigned int n = 1;
-
+	
+	turnOffAllLeds();
 	LED_On(4);
 	for(;;) {
 
@@ -107,12 +111,8 @@ void ThreadB (void const *argument) {
 		//delay(100);
   }     
 
-	printf("final result for thread B: b = %f", b);
 	// try yielding instead of terminating
 	osThreadYield();
-	
-	//terminate this thread
-	//osThreadTerminate(tid_B_Thread);
 }
 
 // Task C
@@ -132,29 +132,25 @@ void ThreadC (void const *argument) {
 		//delay(100);
   }
 	
-	printf("final result for Thread C: c = %f", c);
 	// try yielding instead of terminating
 	osThreadYield();
-	//terminate this thread
-	//osThreadTerminate(tid_C_Thread);
 }
 
 // Task D
 
 void ThreadD (void const *argument) {
-	double d;
+	double d = 1;
+	int i;
 	turnOffAllLeds();
 	LED_On(6);
-	//delay(100);
-	d = 1 + 5/factorial(1) + pow(5,2)/factorial(2) + pow(5,3)/factorial(3) + pow(5,4)/factorial(4) + pow(5,5)/factorial(5);
-	turnOffAllLeds();
-	LED_On(6);	
-	printf("final result for Thread D: d = %f", d);
+	for (i=1; i<=5; i++){
+		turnOffAllLeds();
+		LED_On(6);
+		d += powerAndFactorial(5, i, i);
+	}	
 	
 	// try yielding instead of terminating
 	osThreadYield();
-	//terminate this thread
-	//osThreadTerminate(tid_D_Thread);
 }
 
 // Task E
@@ -176,12 +172,8 @@ void ThreadE (void const *argument) {
 		//delay(200);
 	}
 	
-	printf("final result for Thread E: e = %f", e);
 	// try yielding instead of terminating
 	osThreadYield();
-	
-	//terminate this thread
-	//osThreadTerminate(tid_E_Thread);
 }
 
 
@@ -217,4 +209,8 @@ void turnOffAllLeds(void){
 	for (i = 3; i<8; i++){
 		LED_Off(i);
 	}
+}
+
+double powerAndFactorial(int base, int exponent, int fact){
+	return pow((double) base, (double) exponent)/factorial(fact);
 }
