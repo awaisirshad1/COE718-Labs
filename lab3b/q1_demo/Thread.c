@@ -2,7 +2,7 @@
 #include "cmsis_os.h"                                           // CMSIS RTOS header file
 #include <stdio.h>
 #include <math.h>
-#include "LPC17xx.h"
+#include "LED.h"
 
 unsigned int factorial(unsigned int n);
 double pi_r_squared(int r);
@@ -70,7 +70,7 @@ void ThreadA (void const *argument) {
   	a += x + (x+2);
 		x++;
 		// delay a bit
-		delay(100);
+		delay(10000);
   }
 	
 	// try yielding instead of terminating
@@ -93,7 +93,7 @@ void ThreadB (void const *argument) {
 		
 		b += (power(2, n))/(factorial(n));
 		n += 1;
-		delay(100);
+		delay(10000);
   }     
 
 	// try yielding instead of terminating
@@ -112,7 +112,7 @@ void ThreadC (void const *argument) {
   	if(n == 16) break;
 		c += (n+1)/n;
 		n += 1;
-		delay(100);
+		delay(10000);
   }
 	
 	// try yielding instead of terminating
@@ -128,7 +128,7 @@ void ThreadD (void const *argument) {
 		turnOffAllLeds();	
 		turnOnLed(4);
 		d += powerAndFactorial(5, i, i);
-		delay(100);
+		delay(10000);
 	}	
 	
 	// try yielding instead of terminating
@@ -150,7 +150,7 @@ void ThreadE (void const *argument) {
 			turnOnLed(6);
 			e += i*pi_r_squared(r);
 		}
-		delay(200);
+		delay(20000);
 	}
 	
 	// try yielding instead of terminating
@@ -186,11 +186,19 @@ void delay(int value){
 }
 
 void turnOffAllLeds(void){
-	LPC_GPIO1 -> FIOPIN &= ~(1 << 28);
-	LPC_GPIO1 -> FIOPIN &= ~(1 << 29);
-	LPC_GPIO2 -> FIOPIN &= ~(1 << 2);
-	LPC_GPIO2 -> FIOPIN &= ~(1 << 4);
-	LPC_GPIO2 -> FIOPIN &= ~(1 << 6);
+	//LPC_GPIO1 -> FIOPIN &= ~(1 << 28);
+	//LPC_GPIO1 -> FIOPIN &= ~(1 << 29);
+	//LPC_GPIO2 -> FIOPIN &= ~(1 << 2);
+	//LPC_GPIO2 -> FIOPIN &= ~(1 << 4);
+	//LPC_GPIO2 -> FIOPIN &= ~(1 << 6);
+	LED_Off(28);
+	LED_Off(29);
+	LED_Off(31);
+	LED_Off(2);
+	LED_Off(3);
+	LED_Off(4);
+	LED_Off(5);
+	LED_Off(6);
 }
 
 double powerAndFactorial(int base, int exponent, int fact){
@@ -208,7 +216,8 @@ double power(int base, int exponent){
 }
 
 void turnOnLed(unsigned int ledNum){
-	switch(ledNum){
+	LED_On(ledNum);
+	/*switch(ledNum){
 		case 28:
 			LPC_GPIO1 -> FIOPIN |= (1<<28);
 		case 29:
@@ -219,5 +228,5 @@ void turnOnLed(unsigned int ledNum){
 			LPC_GPIO2 -> FIOPIN |= (1<<4);
 		case 6:
 			LPC_GPIO2 -> FIOPIN |= (1<<6);	
-	}
+	}*/
 }

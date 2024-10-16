@@ -1,38 +1,25 @@
-Dependencies for Project 'q1_demo_project', Target 'Target 1': (DO NOT MODIFY !)
+Dependencies for Project 'q2_debug_project', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARMCC
-F (.\main.c)(0x670FB540)(-c --cpu Cortex-M3 -D__RTX -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_Target_1-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main.c)(0x632B3803)(-c --cpu Cortex-M3 -D__RTX -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_Target_1-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (osObjects.h)(0x5C8ACD3C)
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC\cmsis_os.h)(0x5C8ACD3C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC81EBC)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5EC81EBC)
-I (C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x584985E2)
-I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
-I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
-I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
-I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
-I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
-I (C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x584985E2)
-I (LED.h)(0x631E5620)
-F (.\Thread.c)(0x670FB4B2)(-c --cpu Cortex-M3 -D__RTX -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_Target_1-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\objects\thread.o --omf_browse .\objects\thread.crf --depend .\objects\thread.d)
+F (.\Thread.c)(0x670FB2F8)(-c --cpu Cortex-M3 -D__RTX -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_Target_1-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\objects\thread.o --omf_browse .\objects\thread.crf --depend .\objects\thread.d)
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC\cmsis_os.h)(0x5C8ACD3C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC81EBC)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5EC81EBC)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC81EBC)
-I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5EC81EC4)
-I (LED.h)(0x631E5620)
-F (.\LED.c)(0x670EFE16)(-c --cpu Cortex-M3 -D__RTX -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_Target_1-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\objects\led.o --omf_browse .\objects\led.crf --depend .\objects\led.d)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5EC81EC4)
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x584985E2)
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC81EBC)
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F79E2)
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83AF82)
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x584985E2)
-I (LED.h)(0x631E5620)
-F (.\LED.h)(0x631E5620)()
 F (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\LIB\ARM\RTX_CM3.lib)(0x5E8F79EA)()
-F (RTE\CMSIS\RTX_Conf_CM.c)(0x670F10BE)(-c --cpu Cortex-M3 -D__RTX -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_Target_1-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\objects\rtx_conf_cm.o --omf_browse .\objects\rtx_conf_cm.crf --depend .\objects\rtx_conf_cm.d)
+F (RTE\CMSIS\RTX_Conf_CM.c)(0x5C8ACD3C)(-c --cpu Cortex-M3 -D__RTX -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_Target_1-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\objects\rtx_conf_cm.o --omf_browse .\objects\rtx_conf_cm.crf --depend .\objects\rtx_conf_cm.d)
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC\cmsis_os.h)(0x5C8ACD3C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC81EBC)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5EC81EBC)
