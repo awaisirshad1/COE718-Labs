@@ -2,7 +2,31 @@
 #include "cmsis_os.h"                                           // CMSIS RTOS header file
 #include <stdio.h>
 #include <math.h>
+#include "LPC17xx.h"
+#define USE_LED 0
 
+//ITM Stimulus Port definitions for printf //////////////////
+#define ITM_Port8(n)    (*((volatile unsigned char *)(0xE0000000+4*n)))
+#define ITM_Port16(n)   (*((volatile unsigned short*)(0xE0000000+4*n)))
+#define ITM_Port32(n)   (*((volatile unsigned long *)(0xE0000000+4*n)))
+
+#define DEMCR           (*((volatile unsigned long *)(0xE000EDFC)))
+#define TRCENA          0x01000000
+
+struct __FILE { int handle;  };
+FILE __stdout;
+FILE __stdin;
+
+int fputc(int ch, FILE *f) {
+  if (DEMCR & TRCENA) {
+    while (ITM_Port32(0) == 0);
+    ITM_Port8(0) = ch;
+  }
+  return(ch);
+}
+/////////////////////////////////////////////////////////
+
+char text[10];
 unsigned int factorial(unsigned int n);
 double pi_r_squared(int r);
 void delay(int value);
@@ -89,13 +113,10 @@ void ThreadA (void const *argument) {
 		// delay a bit
 		//delay(100);
   }
-	
+	//sprintf(text, "final result for thread A: a = %d", a);
 	//printf("final result for thread A: a = %d", a);
 	// try yielding instead of terminating
 	osThreadYield();
-	
-	//terminate this thread
-//	osThreadTerminate(tid_A_Thread);
 }
 
 // Task B
@@ -111,13 +132,11 @@ void ThreadB (void const *argument) {
 		n += 1;
 		//delay(100);
   }     
-
+	//sprintf(text, "final result for Thread B: b = %f", b);
 	//printf("final result for thread B: b = %f", b);
 	// try yielding instead of terminating
 	osThreadYield();
 	
-	//terminate this thread
-	//osThreadTerminate(tid_B_Thread);
 }
 
 // Task C
@@ -132,12 +151,10 @@ void ThreadC (void const *argument) {
 		n += 1;
 		//delay(100);
   }
-	
+	//sprintf(text, "final result for Thread C: c = %f", c);
 	//printf("final result for Thread C: c = %f", c);
 	// try yielding instead of terminating
 	osThreadYield();
-	//terminate this thread
-	//osThreadTerminate(tid_C_Thread);
 }
 
 // Task D
@@ -146,13 +163,11 @@ void ThreadD (void const *argument) {
 	double d;
 	//delay(100);
 	d = 1 + 5/factorial(1) + pow(5,2)/factorial(2) + pow(5,3)/factorial(3) + pow(5,4)/factorial(4) + pow(5,5)/factorial(5);
-		
+	//sprintf(text, "final result for Thread D: d = %f", d);
 	//printf("final result for Thread D: d = %f", d);
 	
 	// try yielding instead of terminating
 	osThreadYield();
-	//terminate this thread
-	//osThreadTerminate(tid_D_Thread);
 }
 
 // Task E
@@ -168,13 +183,11 @@ void ThreadE (void const *argument) {
 		}
 		//delay(200);
 	}
-	
+	//sprintf(text, "final result for Thread E: e = %f", e);
 	//printf("final result for Thread E: e = %f", e);
-	// try yielding instead of terminating
+	
 	osThreadYield();
 	
-	//terminate this thread
-	//osThreadTerminate(tid_E_Thread);
 }
 
 

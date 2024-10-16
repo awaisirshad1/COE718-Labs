@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'Bitband' 
+ * Project: 'BarrelShifting' 
  * Target:  'Target 1' 
  */
 
