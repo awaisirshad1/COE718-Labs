@@ -66,9 +66,10 @@ int Init_Thread (void) {
 
 
 void MemManage (void const *argument){
+	// bitband address
+	volatile unsigned long *GPIO_PORT1_LED31 = (volatile unsigned long *)0x233806FC;
 	memoryAccessCounter += 1;
 	// bitband computation
-	volatile unsigned long *GPIO_PORT1_LED31 = (volatile unsigned long *)0x233806FC;
 	*GPIO_PORT1_LED31 = 1;
 	// pass control to cpu manager
 	osThreadYield();
