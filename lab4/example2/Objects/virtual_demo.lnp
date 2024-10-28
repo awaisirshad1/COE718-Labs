@@ -1,5 +1,5 @@
 --cpu Cortex-M3
-".\objects\virtual_demo.o"
+".\objects\priority_inv.o"
 ".\objects\led_mcb1700.o"
 "C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\LIB\ARM\RTX_CM3.lib"
 ".\objects\rtx_conf_cm.o"

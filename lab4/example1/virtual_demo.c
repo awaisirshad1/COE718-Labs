@@ -34,7 +34,7 @@ void callback(void const *param){
 	switch( (uint32_t) param){
 		case 0:
 			LED_On(6); LED_Off(7);
-			osDelay(1000);
+			osDelay(1000); 
 		  LED_Off(6); LED_Off(7);
 			break;
 		case 1:

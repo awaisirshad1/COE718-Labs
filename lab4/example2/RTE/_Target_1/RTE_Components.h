@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'q1_debug' 
+ * Project: 'virtual_demo' 
  * Target:  'Target 1' 
  */
 
