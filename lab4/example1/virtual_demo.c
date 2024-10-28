@@ -7,7 +7,7 @@
 #include "cmsis_os.h"                                           // CMSIS RTOS header file
 #include <stdio.h>
 #include <math.h>
-#include "Board_LED.h"                  // ::Board Support:LED
+//#include "Board_LED.h"                  // ::Board Support:LED
 
   
 void led_Thread1 (void const *argument); // thread function
@@ -33,14 +33,14 @@ osThreadId T_led_ID3;
 void callback(void const *param){
 	switch( (uint32_t) param){
 		case 0:
-			LED_On(6); LED_Off(7);
-			osDelay(1000); 
-		  LED_Off(6); LED_Off(7);
+			//LED_On(6); LED_Off(7);
+			osDelay(1000);
+		  //LED_Off(6); LED_Off(7);
 			break;
 		case 1:
-			LED_Off(6); LED_On(7);
+			//LED_Off(6); LED_On(7);
 		  osDelay(1000);
-		  LED_Off(6); LED_Off(7);
+		  //LED_Off(6); LED_Off(7);
 		  break;
 	}
 }
@@ -55,10 +55,10 @@ osTimerDef(timer1_handle, callback);
 *#############################################################*/
 void led_Thread1 (void const *argument) {
 	for (;;) {
-		LED_On(0);
+		//LED_On(0);
 		osDelay(5000);
 		osSignalSet	(T_led_ID2,0x01);
-		LED_Off(0); 
+		//LED_Off(0); 
 		osSignalWait (0x03,osWaitForever);
 	}
 }
@@ -68,11 +68,11 @@ void led_Thread1 (void const *argument) {
 *################################################################*/
 void led_Thread2 (void const *argument) {
 	for (;;) 	{
-		LED_Off(2);	
+		//LED_Off(2);	
 		osSignalWait (0x01,osWaitForever);
-		LED_On(2);
+		//LED_On(2);
     osDelay(5000);		
-		LED_Off(2);
+		//LED_Off(2);
 		osSignalSet	(T_led_ID3,0x02);
 	}
 }
@@ -83,11 +83,11 @@ void led_Thread2 (void const *argument) {
 *################################################################*/
 void led_Thread3 (void const *argument){
 	for (;;) 	{
-		LED_Off(4);
+		//LED_Off(4);
 		osSignalWait (0x02,osWaitForever);
-		LED_On(4); 
+		//LED_On(4); 
 		osDelay(5000);
-		LED_Off(4);
+		//LED_Off(4);
 		osSignalSet	(T_led_ID1,0x03);
 		
 	}
@@ -103,7 +103,7 @@ int main (void) {
 	osTimerId timer_0 = osTimerCreate(osTimer(timer0_handle), osTimerPeriodic, (void *)0);	
 	osTimerId timer_1 = osTimerCreate(osTimer(timer1_handle), osTimerPeriodic, (void *)1);	
 	
-  LED_Initialize ();	
+  //LED_Initialize ();	
 	osTimerStart(timer_0, 6000);	
 	osTimerStart(timer_1, 2000);	
 	
