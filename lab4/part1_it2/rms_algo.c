@@ -17,9 +17,9 @@ void t_processA(void const *argument);		// process A
 void t_processB(void const *argument);		// process B
 void t_processC(void const *argument);		// process C
 
-osThreadDef (t_processA, osPriorityBelowNormal, 1, 0);	// thread for process A
-osThreadDef (t_processB, osPriorityNormal, 1, 0);				// thread for process B
-osThreadDef (t_processC, osPriorityHigh, 1, 0);					// thread for process C
+osThreadDef (t_processA, osPriorityNormal, 1, 0);							// thread for process A
+osThreadDef (t_processB, osPriorityAboveNormal, 1, 0);				// thread for process B
+osThreadDef (t_processC, osPriorityHigh, 1, 0);								// thread for process C
 
 
 // delay function
@@ -46,7 +46,7 @@ void callback(void const *param){
 		#ifndef DEBUGMODE
 			LED_On(5); LED_Off(6); LED_Off(7); 
 		#endif
-			osDelay(1000); 
+			osDelay(100); 
 		#ifndef DEBUGMODE
 		  LED_Off(5); LED_Off(6); LED_Off(7);
 		#endif
@@ -55,16 +55,17 @@ void callback(void const *param){
 		#ifndef DEBUGMODE
 			LED_Off(5); LED_On(6); LED_Off(7); 
 		#endif
-			osDelay(1000); 
+			osDelay(100); 
 		#ifndef DEBUGMODE
 		  LED_Off(5); LED_Off(6); LED_Off(7);
 		#endif
 			break;
 		case 2: // process C, LED 4
+			taskC_period_complete = 1;
 		#ifndef DEBUGMODE
 			LED_Off(5); LED_Off(6); LED_On(7);
 		#endif		
-			osDelay(1000); 
+			osDelay(100); 
 		#ifndef DEBUGMODE
 			LED_Off(5); LED_Off(6); LED_Off(7);
 		#endif	
@@ -87,6 +88,8 @@ B				|                    ----------------------------------------
 C				|--------------------                                                            --------------------
 
 Period 	|---------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+																																										     |                                                                               |
+                                                                                       20000 ms                                                                         40000 ms
 
 Therefore, task C executes first (highest priority) for 5000 ms, then 15000 ms of its period remains, during which it sleeps (using osDelay). The next thread with the highest
 priority is task B, which executes for the next 10000 ms, and sleeps for remaining 25000 ms of its period (40000 ms period, 5000 ms used by C, then 10000 by B, therefore 
@@ -98,10 +101,12 @@ during which two periods of task C take place. This entire flow repeats across e
 //#############################################################
 void t_processA(void const *argument){
 	for(;;){
+		// thread A is always waiting on flag 0x03
+		osSignalWait(0x03, osWaitForever);
 	#ifndef DEBUGMODE
 		LED_On(0);
 	#endif
-		osSignalWait(0x03, osWaitForever);
+		
 		
 		if(!taskC_period_complete){
 			delay_ms(5000);
@@ -120,6 +125,7 @@ void t_processA(void const *argument){
 
 void t_processB(void const *argument){
 	for(;;){
+		// thread B is always waiting on flag 0x02
 		osSignalWait(0x02, osWaitForever);
 	#ifndef DEBUGMODE
 		LED_On(2);
@@ -134,23 +140,32 @@ void t_processB(void const *argument){
 
 void t_processC(void const *argument){
 	for(;;){
+		// thread C is always waiting on flag 0x01
 		osSignalWait(0x01, osWaitForever);
 	#ifndef DEBUGMODE
 		LED_On(4);
 	#endif
 		delay_ms(5000);
-		taskC_period_complete = 1;
+//		taskC_period_complete = 1;
 		
 	#ifndef DEBUGMODE
 		LED_Off(4);
 	#endif
-		osSignalSet(threadB_id, 0x02); 
+		/*
+		if(taskC_period_complete){
+			osSignalSet(threadA_id, 0x03);
+			taskC_period_complete = 0;
+		}
+		else{
+			osSignalSet(threadB_id, 0x02); 
+		}
+		*/
 	}
 }
 
 void do_work(uint32_t delay){
-	for(int i=0; i<delay; i++)
-		for(int j=0; j<delay; j++);
+	for(int i=0; i<10*delay; i++)
+		for(int j=0; j<10*delay; j++);
 }
 
 void initDelayTimer(void){
@@ -173,8 +188,9 @@ void delay_ms(unsigned int ms){
 	LPC_TIM0 -> TCR = 0x00;
 #endif
 #ifdef DEBUGMODE
-	for(int i=0; i<ms; i++)
-		for(int j=0; j<ms; j++);
+	osDelay(ms);
+	//for(int i=0; i<ms; i++)
+		//for(int j=0; j<ms; j++);
 #endif
 }
 
@@ -189,14 +205,21 @@ int main(void){
 	osTimerId timerB = osTimerCreate(osTimer(timerB_handle), osTimerPeriodic, (void *)1);
 	osTimerId timerC = osTimerCreate(osTimer(timerC_handle), osTimerPeriodic, (void *)2);
 	
+	// for demo purposes, use the provided timers
 #ifndef DEBUGMODE
 	LED_Initialize();
-#endif
+
+
 	osTimerStart(timerA, 40000);
 	osTimerStart(timerB, 40000);
 	osTimerStart(timerC, 20000);
-	
-	
+#endif	
+	// for debug purposes, use shorter periods
+#ifdef DEBUGMODE
+	osTimerStart(timerA, 20);
+	osTimerStart(timerB, 20);
+	osTimerStart(timerC, 10);
+#endif
 	threadA_id = osThreadCreate(osThread(t_processA), NULL);
 	threadB_id = osThreadCreate(osThread(t_processB), NULL);
 	threadC_id = osThreadCreate(osThread(t_processC), NULL);
