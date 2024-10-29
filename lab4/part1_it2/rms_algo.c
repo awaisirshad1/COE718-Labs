@@ -3,7 +3,7 @@
  *---------------------------------------------------------------------------*/
 
 #define osObjectsPublic                     // define objects in main module
-#define PRESCALE (25000-1)										// 25k PCLK clock cycles to increment TC by 1
+//#define PRESCALE (25000-1)										// 25k PCLK clock cycles to increment TC by 1
 #include "osObjects.h"                      // RTOS object definitions
 #include "cmsis_os.h"                                           // CMSIS RTOS header file
 #include <stdio.h>
@@ -11,7 +11,7 @@
 #include "Board_LED.h"                  // ::Board Support:LED
 #include <LPC17xx.h>
 
-#define DEBUGMODE 0   								//uncomment for debug mode
+//#define DEBUGMODE 0   								//uncomment for debug mode
 
 void t_processA(void const *argument);		// process A
 void t_processB(void const *argument);		// process B
@@ -168,7 +168,7 @@ void do_work(uint32_t delay){
 		for(int j=0; j<10*delay; j++);
 }
 
-void initDelayTimer(void){
+/*void initDelayTimer(void){
 	LPC_SC -> PCONP |= (1<<1);
 	LPC_SC -> PCLKSEL0 &= ~(0x3<<3);
 	
@@ -177,9 +177,10 @@ void initDelayTimer(void){
 	
 	LPC_TIM0 -> TCR = 0x02;
 }
-
+*/
 // delay function that uses timer of the peripheral clock
 void delay_ms(unsigned int ms){
+	/*
 #ifndef DEBUGMODE
 	LPC_TIM0 -> TCR = 0x02;
 	LPC_TIM0 -> TCR = 0x01;
@@ -187,17 +188,19 @@ void delay_ms(unsigned int ms){
 	while(LPC_TIM0-> TC <ms);
 	LPC_TIM0 -> TCR = 0x00;
 #endif
+	*/
 #ifdef DEBUGMODE
 	osDelay(ms);
-	//for(int i=0; i<ms; i++)
-		//for(int j=0; j<ms; j++);
+	
 #endif
+	for(int i=0; i<ms; i++)
+		for(int j=0; j<ms; j++);
 }
 
 int main(void){
 	// initialize for delay function
 #ifndef DEBUGMODE
-	initDelayTimer();
+	//initDelayTimer();
 #endif
 	osKernelInitialize();
 	// virtual timers and start threads
