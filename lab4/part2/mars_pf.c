@@ -14,7 +14,7 @@ void taskC (void const *argument);
 // let the availability of R1 be represented by this boolean
 bool R1 = true;
 // set to true or false depending on whether you want to implement the priority inheritance protocol (solution)
-bool ENABLE_PIP = false;
+bool ENABLE_PIP = true;
 osThreadDef(taskA, osPriorityHigh, 1, 0);           //high priority task
 osThreadDef(taskB, osPriorityNormal, 1, 0);         //medium priority task
 osThreadDef(taskC, osPriorityBelowNormal, 1,0);     //lower priority task
