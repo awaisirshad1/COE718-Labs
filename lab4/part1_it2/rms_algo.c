@@ -3,7 +3,7 @@
  *---------------------------------------------------------------------------*/
 
 #define osObjectsPublic                     // define objects in main module
-//#define PRESCALE (25000-1)										// 25k PCLK clock cycles to increment TC by 1
+#define PRESCALE (25000-1)										// 25k PCLK clock cycles to increment TC by 1
 #include "osObjects.h"                      // RTOS object definitions
 #include "cmsis_os.h"                                           // CMSIS RTOS header file
 #include <stdio.h>
@@ -146,12 +146,12 @@ void t_processC(void const *argument){
 		LED_On(4);
 	#endif
 		delay_ms(5000);
-//		taskC_period_complete = 1;
+		taskC_period_complete = 1;
 		
 	#ifndef DEBUGMODE
 		LED_Off(4);
 	#endif
-		/*
+		
 		if(taskC_period_complete){
 			osSignalSet(threadA_id, 0x03);
 			taskC_period_complete = 0;
@@ -159,7 +159,7 @@ void t_processC(void const *argument){
 		else{
 			osSignalSet(threadB_id, 0x02); 
 		}
-		*/
+		
 	}
 }
 
@@ -168,7 +168,7 @@ void do_work(uint32_t delay){
 		for(int j=0; j<10*delay; j++);
 }
 
-/*void initDelayTimer(void){
+void initDelayTimer(void){
 	LPC_SC -> PCONP |= (1<<1);
 	LPC_SC -> PCLKSEL0 &= ~(0x3<<3);
 	
@@ -177,10 +177,10 @@ void do_work(uint32_t delay){
 	
 	LPC_TIM0 -> TCR = 0x02;
 }
-*/
+
 // delay function that uses timer of the peripheral clock
 void delay_ms(unsigned int ms){
-	/*
+	
 #ifndef DEBUGMODE
 	LPC_TIM0 -> TCR = 0x02;
 	LPC_TIM0 -> TCR = 0x01;
@@ -188,7 +188,7 @@ void delay_ms(unsigned int ms){
 	while(LPC_TIM0-> TC <ms);
 	LPC_TIM0 -> TCR = 0x00;
 #endif
-	*/
+	
 #ifdef DEBUGMODE
 	osDelay(ms);
 	

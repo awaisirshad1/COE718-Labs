@@ -1,0 +1,9 @@
+.\objects\mars_pf.o: mars_pf.c
+.\objects\mars_pf.o: osObjects.h
+.\objects\mars_pf.o: C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC\cmsis_os.h
+.\objects\mars_pf.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\mars_pf.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\mars_pf.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\mars_pf.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\mars_pf.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\objects\mars_pf.o: .\RTE\_Target_1\RTE_Components.h
