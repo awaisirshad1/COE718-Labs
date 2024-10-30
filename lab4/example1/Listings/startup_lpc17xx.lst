@@ -432,15 +432,15 @@ ARM Macro Assembler    Page 7
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=.\objects\startup_lpc17xx.d -o.\objects\startup_lpc17xx.o -I.\RTE\
-Device\LPC1768 -I.\RTE\_Target_1 -IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\C
-MSIS\5.7.0\CMSIS\Core\Include -IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSI
-S\5.7.0\CMSIS\RTOS\RTX\INC -IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC170
-0_DFP\2.6.0\Device\Include -IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC170
-0_DFP\2.6.0\RTE_Driver -IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\MDK-Middle
-ware\7.12.0\Board --predefine="__RTX SETA 1" --predefine="__UVISION_VERSION SET
-A 531" --predefine="_RTE_ SETA 1" --predefine="LPC175x_6x SETA 1" --predefine="
-_RTE_ SETA 1" --list=.\listings\startup_lpc17xx.lst RTE\Device\LPC1768\startup_
-LPC17xx.s
+Device\LPC1768 -I.\RTE\_Target_1 -IC:\Users\USER\AppData\Local\Arm\Packs\ARM\CM
+SIS\5.8.0\CMSIS\Core\Include -IC:\Users\USER\AppData\Local\Arm\Packs\ARM\CMSIS\
+5.8.0\CMSIS\RTOS\RTX\INC -IC:\Users\USER\AppData\Local\Arm\Packs\Keil\LPC1700_D
+FP\2.7.2\Device\Include -IC:\Users\USER\AppData\Local\Arm\Packs\Keil\LPC1700_DF
+P\2.7.2\RTE_Driver -IC:\Users\USER\AppData\Local\Arm\Packs\Keil\MDK-Middleware\
+7.13.0\Board --predefine="__RTX SETA 1" --predefine="__EVAL SETA 1" --predefine
+="__UVISION_VERSION SETA 535" --predefine="_RTE_ SETA 1" --predefine="LPC175x_6
+x SETA 1" --predefine="_RTE_ SETA 1" --list=.\listings\startup_lpc17xx.lst RTE\
+Device\LPC1768\startup_LPC17xx.s
 
 
 
@@ -1093,4 +1093,4 @@ Symbol: __use_two_region_memory
       None
 Comment: __use_two_region_memory unused
 3 symbols
-404 symbols in table
+405 symbols in table
