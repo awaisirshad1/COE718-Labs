@@ -70,13 +70,13 @@ int main (void) {
   GLCD_Clear(White);                         /* Clear graphical LCD display   */
   GLCD_SetBackColor(Red);
   GLCD_SetTextColor(White);
-  GLCD_DisplayString(0, 0, __FI, "     COE718 Lab 1   ");
+  GLCD_DisplayString(0, 0, __FI, ( unsigned char *)"     COE718 Lab 1   ");
 	GLCD_SetTextColor(White);
-  GLCD_DisplayString(1, 0, __FI, "       Blinky.c     ");
-  GLCD_DisplayString(2, 0, __FI, "    Use joystick   ");
+  GLCD_DisplayString(1, 0, __FI, ( unsigned char *)"       Blinky.c     ");
+  GLCD_DisplayString(2, 0, __FI, ( unsigned char *)"    Use joystick   ");
   GLCD_SetBackColor(White);
   GLCD_SetTextColor(Black);
-  GLCD_DisplayString(4, 0, __FI, " direction: ");
+  GLCD_DisplayString(4, 0, __FI, ( unsigned char *)" direction: ");
 #endif
 
   //SystemCoreClockUpdate();
