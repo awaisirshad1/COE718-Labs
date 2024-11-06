@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'Lab3a_Demo' 
+ * Project: 'dummyrtx' 
  * Target:  'Target 1' 
  */
 
