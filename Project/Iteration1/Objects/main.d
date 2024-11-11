@@ -1,0 +1,9 @@
+.\objects\main.o: main.c
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\main.o: .\common\inc\LPC17xx.h
+.\objects\main.o: .\common\inc\core_cm3.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: .\common\inc\system_LPC17xx.h
+.\objects\main.o: .\common\inc\LPC17xx.h
+.\objects\main.o: GLCD.h
+.\objects\main.o: KBD.h

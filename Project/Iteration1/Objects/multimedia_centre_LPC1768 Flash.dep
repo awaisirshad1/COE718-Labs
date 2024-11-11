@@ -1,0 +1,42 @@
+Dependencies for Project 'multimedia_centre', Target 'LPC1768 Flash': (DO NOT MODIFY !)
+CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARMCC
+F (.\IRQ.c)(0x673250D3)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\common\inc-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="531" -DLPC175x_6x -DLPC175x_6x-o .\objects\irq.o --omf_browse .\objects\irq.crf --depend .\objects\irq.d)
+I (.\common\inc\LPC17xx.h)(0x537C1E0A)
+I (.\common\inc\core_cm3.h)(0x4D250C6C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC81EBC)
+I (.\common\inc\system_LPC17xx.h)(0x537CB1A8)
+F (.\main.c)(0x6732516E)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\common\inc-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="531" -DLPC175x_6x -DLPC175x_6x-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC81EBC)
+I (.\common\inc\LPC17xx.h)(0x537C1E0A)
+I (.\common\inc\core_cm3.h)(0x4D250C6C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC81EBC)
+I (.\common\inc\system_LPC17xx.h)(0x537CB1A8)
+I (GLCD.h)(0x631E5620)
+I (KBD.h)(0x672A6B5F)
+F (.\common\system_LPC17xx.c)(0x537CB372)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\common\inc-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="531" -DLPC175x_6x -DLPC175x_6x-o .\objects\system_lpc17xx.o --omf_browse .\objects\system_lpc17xx.crf --depend .\objects\system_lpc17xx.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC81EBC)
+I (common\LPC17xx.h)(0x4F47CD02)
+I (.\common\inc\core_cm3.h)(0x4D250C6C)
+I (.\common\inc\system_LPC17xx.h)(0x537CB1A8)
+I (.\common\inc\LPC17xx.h)(0x537C1E0A)
+F (.\startup_LPC17xx.s)(0x4D250C6C)(--cpu Cortex-M3 -g --apcs=interwork -IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 531" --pd "LPC175x_6x SETA 1" --pd "LPC175x_6x SETA 1"--list .\listings\startup_lpc17xx.lst --xref -o .\objects\startup_lpc17xx.o --depend .\objects\startup_lpc17xx.d)
+F (.\core_cm3.c)(0x4D250C6C)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\common\inc-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="531" -DLPC175x_6x -DLPC175x_6x-o .\objects\core_cm3.o --omf_browse .\objects\core_cm3.crf --depend .\objects\core_cm3.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC81EBC)
+F (.\Font_6x8_h.h)(0x631E5620)()
+F (.\Font_16x24_h.h)(0x631E5620)()
+F (.\GLCD.h)(0x631E5620)()
+F (.\GLCD_SPI_LPC1700.c)(0x631E5620)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\common\inc-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="531" -DLPC175x_6x -DLPC175x_6x-o .\objects\glcd_spi_lpc1700.o --omf_browse .\objects\glcd_spi_lpc1700.crf --depend .\objects\glcd_spi_lpc1700.d)
+I (.\common\inc\lpc17xx.h)(0x537C1E0A)
+I (.\common\inc\core_cm3.h)(0x4D250C6C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC81EBC)
+I (.\common\inc\system_LPC17xx.h)(0x537CB1A8)
+I (GLCD.h)(0x631E5620)
+I (Font_6x8_h.h)(0x631E5620)
+I (Font_16x24_h.h)(0x631E5620)
+F (.\KBD.c)(0x672A6B5A)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\common\inc-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="531" -DLPC175x_6x -DLPC175x_6x-o .\objects\kbd.o --omf_browse .\objects\kbd.crf --depend .\objects\kbd.d)
+I (.\common\inc\LPC17xx.H)(0x537C1E0A)
+I (.\common\inc\core_cm3.h)(0x4D250C6C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC81EBC)
+I (.\common\inc\system_LPC17xx.h)(0x537CB1A8)
+I (KBD.h)(0x672A6B5F)
+F (.\KBD.h)(0x672A6B5F)()
