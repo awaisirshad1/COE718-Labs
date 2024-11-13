@@ -8,3 +8,4 @@
 .\objects\main.o: C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\RTE_Driver\GPIO_LPC17xx.h
 .\objects\main.o: C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.12.0\Board\Board_Joystick.h
 .\objects\main.o: GLCD.h
+.\objects\main.o: KBD.h

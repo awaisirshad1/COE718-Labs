@@ -10,7 +10,7 @@
 ".\objects\pin_lpc17xx.o"
 ".\objects\startup_lpc17xx.o"
 ".\objects\system_lpc17xx.o"
---strict --scatter ".\Objects\multimedia_centre.sct"
+--library_type=microlib --strict --scatter ".\Objects\multimedia_centre.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Listings\multimedia_centre.map" -o .\Objects\multimedia_centre.axf
