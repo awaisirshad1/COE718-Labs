@@ -16,8 +16,9 @@
  */
 #define CMSIS_device_header "LPC17xx.h"
 
-/*  Keil::CMSIS Driver:SPI:SPI:2.2.0 */
-#define RTE_Drivers_SPI2                /* Driver SPI2 */
+/*  Keil.ARM Compiler::Compiler:I/O:STDOUT:Breakpoint:1.2.0 */
+#define RTE_Compiler_IO_STDOUT          /* Compiler I/O: STDOUT */
+          #define RTE_Compiler_IO_STDOUT_BKPT     /* Compiler I/O: STDOUT Breakpoint */
 /*  Keil::Device:Startup:1.0.0 */
 #define RTE_DEVICE_STARTUP_LPC17XX      /* Device Startup for NXP17XX */
 
