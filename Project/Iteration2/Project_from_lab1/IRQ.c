@@ -16,7 +16,7 @@
 #include "LPC17xx.h"                         /* LPC17xx definitions           */
 #include "LED.h"
 #include "Board_ADC.h"
-#include "Blinky.h"
+#include "main.h"
 
 uint8_t  clock_ms;                           /* Flag activated every 10 ms    */
 
@@ -25,7 +25,7 @@ uint8_t  clock_ms;                           /* Flag activated every 10 ms    */
   Systick Interrupt Handler
   SysTick interrupt happens every 10 ms
  *----------------------------------------------------------------------------*/
-void SysTick_Handler (void) {
+void SysTick_Handler1 (void) {
   static unsigned long ticks = 0;
   static unsigned long timetick;
   static unsigned int  leds = 0x01;

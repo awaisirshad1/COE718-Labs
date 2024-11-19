@@ -1,0 +1,1 @@
+void initializeGallery(void);

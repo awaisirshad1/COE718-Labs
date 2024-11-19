@@ -79,8 +79,8 @@ int main (void) {
   GLCD_DisplayString(4, 0, __FI, ( unsigned char *)" direction: ");
 #endif
 
-  //SystemCoreClockUpdate();
-  //SysTick_Config(SystemCoreClock/100);       /* Generate interrupt each 10 ms */
+  SystemCoreClockUpdate();
+  SysTick_Config(SystemCoreClock/100);       /* Generate interrupt each 10 ms */
 	// uses the system timre to generate interrupts specified by the ticks, reloads the timer upon interrupts using a logic OR, accounts for interrupt priority
 	// The SysTick_Config function initializes the system timer to generate periodic interrupts at a specified tick interval. It configures the timer's reload 
 	// value, sets the interrupt priority, and enables the timer, returning 0 on success or 1 if the tick value is invalid.

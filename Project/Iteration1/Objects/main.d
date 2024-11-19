@@ -5,7 +5,6 @@
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\main.o: .\common\inc\system_LPC17xx.h
 .\objects\main.o: .\common\inc\LPC17xx.h
-.\objects\main.o: C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\RTE_Driver\GPIO_LPC17xx.h
-.\objects\main.o: C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.12.0\Board\Board_Joystick.h
 .\objects\main.o: GLCD.h
+.\objects\main.o: C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.12.0\Board\Board_ADC.h
 .\objects\main.o: KBD.h

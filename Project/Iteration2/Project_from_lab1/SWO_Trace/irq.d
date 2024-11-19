@@ -9,4 +9,4 @@
 .\swo_trace\irq.o: C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
 .\swo_trace\irq.o: LED.h
 .\swo_trace\irq.o: C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.12.0\Board\Board_ADC.h
-.\swo_trace\irq.o: Blinky.h
+.\swo_trace\irq.o: main.h
