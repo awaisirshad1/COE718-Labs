@@ -4,6 +4,7 @@
 #include "mainMenu.h"
 #include "gallery.h"
 
+
 void MainMenuThread( void const *argument);
 void GalleryThread(  void const *argument);
 void MP3PlayerThread( void const *argument);
@@ -21,7 +22,8 @@ osThreadDef(MP3PlayerThread, osPriorityNormal, 1, 0);
 osThreadId gameThreadId;
 osThreadDef(GameThread, osPriorityNormal, 1, 0);
 
-
+// global variable for current picture in gallery
+uint8_t currentPic;
 
 int Init_Thread (void) {
 	// create all our threads
@@ -33,6 +35,8 @@ int Init_Thread (void) {
   if((!mainMenuId) || (!galleryThreadId) || (!mp3PlayerThreadId) || (!gameThreadId)) return(-1); 
   return(0);
 }
+
+void delay(void);
 
 void MainMenuThread( void const *argument){
 	displayMainMenu();
@@ -120,26 +124,75 @@ void MainMenuThread( void const *argument){
 void GalleryThread(  void const *argument){
 	uint8_t exitApp = 0;
 	uint32_t joyStick;
+	uint8_t clearImg = 1;
+	uint8_t selectedImg = 1;
+	currentPic = 1;
 	initializeGallery();
 	while(1){
 		if(exitApp==1){
+			// then exit this app, reinitialize it if we return
+			exitApp = 0; // set this (software) flag back to 0, 
+			//if we return, we don't want the infinite loop to go back to the main menu right away, which is what will happen if it remains 1
 			osSignalSet(mainMenuId, 0x04); 
 			osSignalWait(0x01, osWaitForever);
+			initializeGallery();
 		}
 		else{
 			joyStick = get_button();
-			if(joyStick==KBD_LEFT) exitApp = 1;
-			
+			// if the clearImg flag is set to 1, it means in the previous iteration of the while loop
+			// the joystick was used to navigate to either the next or previous picture, therefore
+			// set the flag back to 0 and display the picture that's value corresponds to currentPic
+			// which is adjusted by the joystick input handling below
+			if(clearImg==1){
+				clearImg = 0;
+				displayPicture(currentPic);
+			}
+			// exit the gallery
+			if(joyStick==KBD_LEFT) {
+				exitApp = 1;
+			}
+			// JOYSTICK INPUT HANDLING AS MENTIONED ABOVE
+			// next picture
+			else if(joyStick == KBD_DOWN){
+				// the if block here is to handle the value of currentPic staying between 1 and 3
+				if(currentPic == 3){
+					currentPic = 1;
+				}
+				else{
+					currentPic += 1;
+				}
+				clearImg = 1;
+			}
+			// previous picture
+			else if(joyStick == KBD_UP){
+				// the if block here is to handle the value of currentPic staying between 1 and 3
+				if(currentPic == 1){
+					currentPic = 3;
+				}
+				else{
+					currentPic -= 1;
+				}
+				clearImg = 1;
+			}
+			// call this function so that the while loop detecting joystick inputs doesn't quickly
+			// scroll through the pictures
+			delay();
 		}
+		
 	}
 }
 	
 void MP3PlayerThread( void const *argument){
-	uint8_t exitApp = 1;
+	uint8_t exitApp = 0;
 	uint32_t joyStick;
 	while(1){
 		if(exitApp==1){
+			// then exit this app, reinitialize it if we return
+			exitApp = 0; // set this (software) flag back to 0, 
+			//if we return, we don't want the infinite loop to go back to the main menu right away, which is what will happen if it remains 1
+			osSignalSet(mainMenuId, 0x04);
 			osSignalWait(0x02, osWaitForever);
+			
 		}
 		else{
 			joyStick = get_button();
@@ -149,10 +202,14 @@ void MP3PlayerThread( void const *argument){
 }
 	
 void GameThread(  void const *argument){
-	uint8_t exitApp = 1;
+	uint8_t exitApp = 0;
 	uint32_t joyStick;
 	while(1){
 		if(exitApp==1){
+			// then exit this app, reinitialize it if we return
+			exitApp = 0; // set this (software) flag back to 0, 
+			//if we return, we don't want the infinite loop to go back to the main menu right away, which is what will happen if it remains 1
+			osSignalSet(mainMenuId, 0x04);
 			osSignalWait(0x03, osWaitForever);
 		}
 		else{
@@ -162,3 +219,10 @@ void GameThread(  void const *argument){
 	}
 }
 
+
+void delay(void){
+	int i,j;
+	for(i=0; i<4000; i++){
+		for(j=0; j<500; j++){}
+	}
+}

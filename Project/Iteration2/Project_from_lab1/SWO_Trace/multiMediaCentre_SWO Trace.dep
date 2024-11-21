@@ -43,7 +43,7 @@ I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x584985E2)
 I (GLCD.h)(0x631E5620)
 F (.\mainMenu.h)(0x673CD435)()
-F (.\Thread.c)(0x673CEE70)(--c99 -c --cpu Cortex-M3 -D__RTX -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_SWO_Trace-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\RTE_Driver-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.12.0\Board-D__UVISION_VERSION="531" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\swo_trace\thread.o --omf_browse .\swo_trace\thread.crf --depend .\swo_trace\thread.d)
+F (.\Thread.c)(0x673E949F)(--c99 -c --cpu Cortex-M3 -D__RTX -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_SWO_Trace-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\RTE_Driver-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.12.0\Board-D__UVISION_VERSION="531" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\swo_trace\thread.o --omf_browse .\swo_trace\thread.crf --depend .\swo_trace\thread.d)
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC\cmsis_os.h)(0x5C8ACD3C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC81EBC)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5EC81EBC)
@@ -58,9 +58,9 @@ I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cms
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x584985E2)
 I (GLCD.h)(0x631E5620)
-I (gallery.h)(0x673CEB85)
+I (gallery.h)(0x673E89AB)
 F (.\osObjects.h)(0x5C8ACD3C)()
-F (.\gallery.c)(0x673CEC5F)(--c99 -c --cpu Cortex-M3 -D__RTX -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_SWO_Trace-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\RTE_Driver-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.12.0\Board-D__UVISION_VERSION="531" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\swo_trace\gallery.o --omf_browse .\swo_trace\gallery.crf --depend .\swo_trace\gallery.d)
+F (.\gallery.c)(0x673E9195)(--c99 -c --cpu Cortex-M3 -D__RTX -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_SWO_Trace-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\RTE_Driver-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.12.0\Board-D__UVISION_VERSION="531" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\swo_trace\gallery.o --omf_browse .\swo_trace\gallery.crf --depend .\swo_trace\gallery.d)
 I (GLCD.h)(0x631E5620)
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x584985E2)
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)
@@ -70,8 +70,11 @@ I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cms
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F79E2)
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F79E2)
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x584985E2)
+I (IMG_6156.c)(0x673D1BC8)
+I (IMG_6157.c)(0x673D18D8)
+I (IMG_6158.c)(0x673D18D8)
 F (.\game.c)(0x673CE940)(--c99 -c --cpu Cortex-M3 -D__RTX -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_SWO_Trace-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\RTE_Driver-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.12.0\Board-D__UVISION_VERSION="531" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\swo_trace\game.o --omf_browse .\swo_trace\game.crf --depend .\swo_trace\game.d)
-F (.\gallery.h)(0x673CEB85)()
+F (.\gallery.h)(0x673E89AB)()
 F (.\game.h)(0x673CEA75)()
 F (.\Abstract.txt)(0x5D5C2A1A)()
 F (.\Font_6x8_h.h)(0x631E5620)()
@@ -111,6 +114,9 @@ I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h)(0x584985E2)
 I (KBD.h)(0x673B82C7)
 F (.\KBD.h)(0x673B82C7)()
+F (.\IMG_6156.c)(0x673D1BC8)(--c99 -c --cpu Cortex-M3 -D__RTX -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_SWO_Trace-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\RTE_Driver-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.12.0\Board-D__UVISION_VERSION="531" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\swo_trace\img_6156.o --omf_browse .\swo_trace\img_6156.crf --depend .\swo_trace\img_6156.d)
+F (.\IMG_6157.c)(0x673D18D8)(--c99 -c --cpu Cortex-M3 -D__RTX -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_SWO_Trace-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\RTE_Driver-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.12.0\Board-D__UVISION_VERSION="531" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\swo_trace\img_6157.o --omf_browse .\swo_trace\img_6157.crf --depend .\swo_trace\img_6157.d)
+F (.\IMG_6158.c)(0x673D18D8)(--c99 -c --cpu Cortex-M3 -D__RTX -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_SWO_Trace-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\RTE_Driver-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.12.0\Board-D__UVISION_VERSION="531" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\swo_trace\img_6158.o --omf_browse .\swo_trace\img_6158.crf --depend .\swo_trace\img_6158.d)
 F (C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Boards\Keil\MCB1700\Common\ADC_MCB1700.c)(0x5D5C2A1A)(--c99 -c --cpu Cortex-M3 -D__RTX -D__MICROLIB -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\LPC1768-I.\RTE\_SWO_Trace-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\RTOS\RTX\INC-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\RTE_Driver-IC:\Users\ECBME\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.12.0\Board-D__UVISION_VERSION="531" -D_RTE_ -DLPC175x_6x -D_RTE_-o .\swo_trace\adc_mcb1700.o --omf_browse .\swo_trace\adc_mcb1700.crf --depend .\swo_trace\adc_mcb1700.d)
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\LPC17xx.h)(0x584985E2)
 I (C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F79E2)

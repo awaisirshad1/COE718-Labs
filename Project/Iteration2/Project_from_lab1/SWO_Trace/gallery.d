@@ -8,3 +8,6 @@
 .\swo_trace\gallery.o: C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h
 .\swo_trace\gallery.o: C:\Users\ECBME\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h
 .\swo_trace\gallery.o: C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
+.\swo_trace\gallery.o: IMG_6156.c
+.\swo_trace\gallery.o: IMG_6157.c
+.\swo_trace\gallery.o: IMG_6158.c

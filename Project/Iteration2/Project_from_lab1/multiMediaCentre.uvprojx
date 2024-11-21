@@ -503,6 +503,23 @@
         </Group>
         <Group>
           <GroupName>Pictures</GroupName>
+          <Files>
+            <File>
+              <FileName>IMG_6156.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\IMG_6156.c</FilePath>
+            </File>
+            <File>
+              <FileName>IMG_6157.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\IMG_6157.c</FilePath>
+            </File>
+            <File>
+              <FileName>IMG_6158.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\IMG_6158.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>::Board Support</GroupName>
@@ -1015,6 +1032,23 @@
         </Group>
         <Group>
           <GroupName>Pictures</GroupName>
+          <Files>
+            <File>
+              <FileName>IMG_6156.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\IMG_6156.c</FilePath>
+            </File>
+            <File>
+              <FileName>IMG_6157.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\IMG_6157.c</FilePath>
+            </File>
+            <File>
+              <FileName>IMG_6158.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\IMG_6158.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>::Board Support</GroupName>
@@ -1527,6 +1561,23 @@
         </Group>
         <Group>
           <GroupName>Pictures</GroupName>
+          <Files>
+            <File>
+              <FileName>IMG_6156.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\IMG_6156.c</FilePath>
+            </File>
+            <File>
+              <FileName>IMG_6157.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\IMG_6157.c</FilePath>
+            </File>
+            <File>
+              <FileName>IMG_6158.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\IMG_6158.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>::Board Support</GroupName>
