@@ -3,7 +3,7 @@
 #include "KBD.h"
 #include "mainMenu.h"
 #include "gallery.h"
-
+#include "usbMain.h"
 
 void MainMenuThread( void const *argument);
 void GalleryThread(  void const *argument);
@@ -196,6 +196,7 @@ void MP3PlayerThread( void const *argument){
 		}
 		else{
 			joyStick = get_button();
+			usbAudio();
 			if(joyStick==KBD_LEFT) exitApp = 1;
 		}
 	}

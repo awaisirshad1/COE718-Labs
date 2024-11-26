@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>.\usb files</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -518,6 +518,101 @@
               <FileName>IMG_6158.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\IMG_6158.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>USB files</GroupName>
+          <Files>
+            <File>
+              <FileName>adcuser.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\adcuser.h</FilePath>
+            </File>
+            <File>
+              <FileName>audio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\audio.h</FilePath>
+            </File>
+            <File>
+              <FileName>type.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\type.h</FilePath>
+            </File>
+            <File>
+              <FileName>usb.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usb.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbaudio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbaudio.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbuser.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbuser.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbcore.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbcore.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbcfg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbcfg.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbhw.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbhw.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbdesc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbdesc.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbreg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbreg.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbhw.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usb files\usbhw.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbuser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usb files\usbuser.c</FilePath>
+            </File>
+            <File>
+              <FileName>adcuser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usb files\adcuser.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbcore.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usb files\usbcore.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbdesc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usb files\usbdesc.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbMain.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usbMain.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbMain.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usbMain.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -1051,6 +1146,101 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>USB files</GroupName>
+          <Files>
+            <File>
+              <FileName>adcuser.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\adcuser.h</FilePath>
+            </File>
+            <File>
+              <FileName>audio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\audio.h</FilePath>
+            </File>
+            <File>
+              <FileName>type.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\type.h</FilePath>
+            </File>
+            <File>
+              <FileName>usb.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usb.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbaudio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbaudio.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbuser.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbuser.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbcore.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbcore.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbcfg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbcfg.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbhw.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbhw.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbdesc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbdesc.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbreg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbreg.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbhw.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usb files\usbhw.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbuser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usb files\usbuser.c</FilePath>
+            </File>
+            <File>
+              <FileName>adcuser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usb files\adcuser.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbcore.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usb files\usbcore.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbdesc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usb files\usbdesc.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbMain.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usbMain.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbMain.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usbMain.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::Board Support</GroupName>
         </Group>
         <Group>
@@ -1576,6 +1766,101 @@
               <FileName>IMG_6158.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\IMG_6158.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>USB files</GroupName>
+          <Files>
+            <File>
+              <FileName>adcuser.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\adcuser.h</FilePath>
+            </File>
+            <File>
+              <FileName>audio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\audio.h</FilePath>
+            </File>
+            <File>
+              <FileName>type.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\type.h</FilePath>
+            </File>
+            <File>
+              <FileName>usb.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usb.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbaudio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbaudio.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbuser.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbuser.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbcore.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbcore.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbcfg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbcfg.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbhw.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbhw.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbdesc.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbdesc.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbreg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usb files\usbreg.h</FilePath>
+            </File>
+            <File>
+              <FileName>usbhw.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usb files\usbhw.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbuser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usb files\usbuser.c</FilePath>
+            </File>
+            <File>
+              <FileName>adcuser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usb files\adcuser.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbcore.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usb files\usbcore.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbdesc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usb files\usbdesc.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbMain.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\usbMain.c</FilePath>
+            </File>
+            <File>
+              <FileName>usbMain.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\usbMain.h</FilePath>
             </File>
           </Files>
         </Group>
