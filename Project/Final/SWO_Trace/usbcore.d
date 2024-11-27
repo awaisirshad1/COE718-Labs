@@ -1,0 +1,11 @@
+.\swo_trace\usbcore.o: usbcore.c
+.\swo_trace\usbcore.o: type.h
+.\swo_trace\usbcore.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\swo_trace\usbcore.o: usb.h
+.\swo_trace\usbcore.o: usbcfg.h
+.\swo_trace\usbcore.o: usbhw.h
+.\swo_trace\usbcore.o: usbcore.h
+.\swo_trace\usbcore.o: usbdesc.h
+.\swo_trace\usbcore.o: usbuser.h
+.\swo_trace\usbcore.o: audio.h
+.\swo_trace\usbcore.o: adcuser.h
