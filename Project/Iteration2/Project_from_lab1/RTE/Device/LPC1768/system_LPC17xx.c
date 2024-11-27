@@ -1,39 +1,35 @@
 /**************************************************************************//**
  * @file     system_LPC17xx.c
- * @brief    CMSIS Device System Source File for
+ * @brief    CMSIS Cortex-M3 Device System Source File for
  *           NXP LPC17xx Device Series
- * @version  V1.14
- * @date     05. April 2016
+ * @version  V1.13
+ * @date     18. April 2012
+ *
+ * @note
+ * Copyright (C) 2009-2012 ARM Limited. All rights reserved.
+ *
+ * @par
+ * ARM Limited (ARM) is supplying this software for use with Cortex-M
+ * processor based microcontrollers.  This file can be freely distributed
+ * within development tools that are supporting such ARM based processors.
+ *
+ * @par
+ * THIS SOFTWARE IS PROVIDED "AS IS".  NO WARRANTIES, WHETHER EXPRESS, IMPLIED
+ * OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE APPLY TO THIS SOFTWARE.
+ * ARM SHALL NOT, IN ANY CIRCUMSTANCES, BE LIABLE FOR SPECIAL, INCIDENTAL, OR
+ * CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
+ *
  ******************************************************************************/
-/* Copyright (c) 2012 - 2016 ARM LIMITED
 
-   All rights reserved.
-   Redistribution and use in source and binary forms, with or without
-   modification, are permitted provided that the following conditions are met:
-   - Redistributions of source code must retain the above copyright
-     notice, this list of conditions and the following disclaimer.
-   - Redistributions in binary form must reproduce the above copyright
-     notice, this list of conditions and the following disclaimer in the
-     documentation and/or other materials provided with the distribution.
-   - Neither the name of ARM nor the names of its contributors may be used
-     to endorse or promote products derived from this software without
-     specific prior written permission.
-   *
-   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-   ARE DISCLAIMED. IN NO EVENT SHALL COPYRIGHT HOLDERS AND CONTRIBUTORS BE
-   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-   POSSIBILITY OF SUCH DAMAGE.
-   ---------------------------------------------------------------------------*/
 
 #include <stdint.h>
 #include "LPC17xx.h"
+
+
+/** @addtogroup LPC17xx_System
+ * @{
+ */
 
 /*
 //-------- <<< Use Configuration Wizard in Context Menu >>> ------------------
@@ -292,6 +288,10 @@
 
 
 
+/** @addtogroup LPC17xx_System_Defines  LPC17xx System Defines
+  @{
+ */
+
 #define CLOCK_SETUP           1
 #define SCS_Val               0x00000020
 #define CLKSRCSEL_Val         0x00000001
@@ -423,18 +423,37 @@
     #endif
  #endif
 
+/**
+ * @}
+ */
 
 
+/** @addtogroup LPC17xx_System_Public_Variables  LPC17xx System Public Variables
+  @{
+ */
 /*----------------------------------------------------------------------------
-  System Core Clock Variable
+  Clock Variable definitions
  *----------------------------------------------------------------------------*/
-uint32_t SystemCoreClock = __CORE_CLK;
+uint32_t SystemCoreClock = __CORE_CLK;/*!< System Clock Frequency (Core Clock)*/
+
+/**
+ * @}
+ */
 
 
-/*----------------------------------------------------------------------------
-  SystemCoreClockUpdate
- *----------------------------------------------------------------------------*/
-void SystemCoreClockUpdate (void)               /* Get Core Clock Frequency   */
+/** @addtogroup LPC17xx_System_Public_Functions  LPC17xx System Public Functions
+  @{
+ */
+
+/**
+ * Update SystemCoreClock variable
+ *
+ * @param  none
+ * @return none
+ *
+ * @brief  Updates the SystemCoreClock with current core Clock
+ *         retrieved from cpu registers.
+ */void SystemCoreClockUpdate (void)            /* Get Core Clock Frequency      */
 {
   /* Determine clock frequency according to clock register values             */
   if (((LPC_SC->PLL0STAT >> 24) & 3) == 3) { /* If PLL0 enabled and connected */
@@ -476,9 +495,15 @@ void SystemCoreClockUpdate (void)               /* Get Core Clock Frequency   */
 
 }
 
-/*----------------------------------------------------------------------------
-  SystemInit
- *----------------------------------------------------------------------------*/
+/**
+ * Initialize the system
+ *
+ * @param  none
+ * @return none
+ *
+ * @brief  Setup the microcontroller system.
+ *         Initialize the System.
+ */
 void SystemInit (void)
 {
 #if (CLOCK_SETUP)                       /* Clock Setup                        */
@@ -539,3 +564,11 @@ void SystemInit (void)
   LPC_SC->FLASHCFG  = (LPC_SC->FLASHCFG & ~0x0000F000) | FLASHCFG_Val;
 #endif
 }
+
+/**
+ * @}
+ */
+
+/**
+ * @}
+ */

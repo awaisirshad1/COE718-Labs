@@ -1,9 +1,9 @@
-.\swo_trace\usbuser.o: usb_files\usbuser.c
-.\swo_trace\usbuser.o: usb_files\type.h
+.\swo_trace\usbuser.o: usbuser.c
+.\swo_trace\usbuser.o: type.h
 .\swo_trace\usbuser.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\swo_trace\usbuser.o: usb_files\usb.h
-.\swo_trace\usbuser.o: usb_files\usbcfg.h
-.\swo_trace\usbuser.o: usb_files\usbhw.h
-.\swo_trace\usbuser.o: usb_files\usbcore.h
-.\swo_trace\usbuser.o: usb_files\usbuser.h
-.\swo_trace\usbuser.o: usb_files\usbaudio.h
+.\swo_trace\usbuser.o: usb.h
+.\swo_trace\usbuser.o: usbcfg.h
+.\swo_trace\usbuser.o: usbhw.h
+.\swo_trace\usbuser.o: usbcore.h
+.\swo_trace\usbuser.o: usbuser.h
+.\swo_trace\usbuser.o: usbaudio.h

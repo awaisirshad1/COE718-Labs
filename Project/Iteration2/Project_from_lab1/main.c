@@ -19,7 +19,6 @@
 #define osObjectsPublic                     // define objects in main module
 #include "osObjects.h"                      // RTOS object definitions
 
-
 #define __FI        1                      /* Font index 16x24               */
 #define __USE_LCD   0										/* Uncomment to use the LCD */
 
@@ -66,7 +65,7 @@ extern int Init_Thread (void);
  *----------------------------------------------------------------------------*/
 int main (void) {
 	uint32_t joyStick;
-	//uint32_t joyStickPrev = 0U;
+	uint32_t joyStickPrev = 0U;
 // initialize peripherals
   LED_Init();                                /* LED Initialization            */
   ADC_Initialize();                                /* ADC Initialization            */
@@ -90,17 +89,17 @@ int main (void) {
 		joyStick = get_button(); 
    	
 		if(joyStick == KBD_SELECT){
-			//joyStickPrev = joyStick;
+			joyStickPrev = joyStick;
 		}
 		else if(joyStick == KBD_DOWN){
-			//joyStickPrev = joyStick;
+			joyStickPrev = joyStick;
 			if(currentSelection!=7){
 				previousSelection = currentSelection;
 				currentSelection+=2;
 			}
 		}
 		else if(joyStick == KBD_UP){
-			//joyStickPrev = joyStick;
+			joyStickPrev = joyStick;
 			if(currentSelection!=3){
 				previousSelection = currentSelection;
 				currentSelection-=2;

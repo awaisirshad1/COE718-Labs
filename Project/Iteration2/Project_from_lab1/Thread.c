@@ -3,6 +3,9 @@
 #include "KBD.h"
 #include "mainMenu.h"
 #include "gallery.h"
+#include "game.h"
+#include "usbdmain.h"
+
 
 void MainMenuThread( void const *argument);
 void GalleryThread(  void const *argument);
@@ -183,6 +186,7 @@ void GalleryThread(  void const *argument){
 	
 void MP3PlayerThread( void const *argument){
 	uint8_t exitApp = 0;
+	uint8_t audioRunning = 0;
 	uint32_t joyStick;
 	while(1){
 		if(exitApp==1){
@@ -195,8 +199,13 @@ void MP3PlayerThread( void const *argument){
 		}
 		else{
 			joyStick = get_button();
-			//usbAudio();
-			if(joyStick==KBD_LEFT) exitApp = 1;
+			if(joyStick==KBD_LEFT){ 
+				exitApp = 1;
+				//suspendUsbAudio();
+			}
+			if(exitApp == 0 && audioRunning==0) {
+				audioRunning = usbAudio();
+			}
 		}
 	}
 }
@@ -214,7 +223,9 @@ void GameThread(  void const *argument){
 		}
 		else{
 			joyStick = get_button();
-			if(joyStick == KBD_DOWN) exitApp = 1;
+			if(joyStick == KBD_SELECT) exitApp = 1;
+			//int gameReturn = game();
+			if(game()==0) exitApp = 1;
 		}
 	}
 }

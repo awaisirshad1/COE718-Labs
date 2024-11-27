@@ -1,0 +1,11 @@
+.\obj\main.o: main.c
+.\obj\main.o: LPC17xx.h
+.\obj\main.o: core_cm3.h
+.\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\main.o: system_LPC17xx.h
+.\obj\main.o: type.h
+.\obj\main.o: usb.h
+.\obj\main.o: usbcfg.h
+.\obj\main.o: usbhw.h
+.\obj\main.o: usbcore.h
+.\obj\main.o: usbaudio.h

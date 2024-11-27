@@ -14,3 +14,11 @@
 .\swo_trace\thread.o: C:\Users\ECBME\AppData\Local\Arm\Packs\Keil\LPC1700_DFP\2.6.0\Device\Include\system_LPC17xx.h
 .\swo_trace\thread.o: GLCD.h
 .\swo_trace\thread.o: gallery.h
+.\swo_trace\thread.o: game.h
+.\swo_trace\thread.o: usbdmain.h
+.\swo_trace\thread.o: type.h
+.\swo_trace\thread.o: usb.h
+.\swo_trace\thread.o: usbcfg.h
+.\swo_trace\thread.o: usbhw.h
+.\swo_trace\thread.o: usbcore.h
+.\swo_trace\thread.o: usbaudio.h
