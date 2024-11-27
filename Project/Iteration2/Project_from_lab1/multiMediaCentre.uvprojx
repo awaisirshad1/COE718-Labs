@@ -326,7 +326,7 @@
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
-            <uGnu>0</uGnu>
+            <uGnu>1</uGnu>
             <useXO>0</useXO>
             <v6Lang>3</v6Lang>
             <v6LangP>3</v6LangP>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\usb files</IncludePath>
+              <IncludePath>.\usb_files</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -496,6 +496,11 @@
               <FileType>5</FileType>
               <FilePath>.\KBD.h</FilePath>
             </File>
+            <File>
+              <FileName>LPC17xx.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LPC17xx.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -523,98 +528,6 @@
         </Group>
         <Group>
           <GroupName>USB files</GroupName>
-          <Files>
-            <File>
-              <FileName>adcuser.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\adcuser.h</FilePath>
-            </File>
-            <File>
-              <FileName>audio.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\audio.h</FilePath>
-            </File>
-            <File>
-              <FileName>type.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\type.h</FilePath>
-            </File>
-            <File>
-              <FileName>usb.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usb.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbaudio.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbaudio.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbuser.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbuser.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbcore.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbcore.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbcfg.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbcfg.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbhw.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbhw.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbdesc.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbdesc.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbreg.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbreg.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbhw.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\usb files\usbhw.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbuser.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\usb files\usbuser.c</FilePath>
-            </File>
-            <File>
-              <FileName>adcuser.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\usb files\adcuser.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbcore.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\usb files\usbcore.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbdesc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\usb files\usbdesc.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbMain.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\usbMain.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbMain.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usbMain.h</FilePath>
-            </File>
-          </Files>
         </Group>
         <Group>
           <GroupName>::Board Support</GroupName>
@@ -1120,6 +1033,11 @@
               <FileType>5</FileType>
               <FilePath>.\KBD.h</FilePath>
             </File>
+            <File>
+              <FileName>LPC17xx.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LPC17xx.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1147,98 +1065,6 @@
         </Group>
         <Group>
           <GroupName>USB files</GroupName>
-          <Files>
-            <File>
-              <FileName>adcuser.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\adcuser.h</FilePath>
-            </File>
-            <File>
-              <FileName>audio.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\audio.h</FilePath>
-            </File>
-            <File>
-              <FileName>type.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\type.h</FilePath>
-            </File>
-            <File>
-              <FileName>usb.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usb.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbaudio.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbaudio.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbuser.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbuser.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbcore.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbcore.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbcfg.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbcfg.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbhw.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbhw.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbdesc.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbdesc.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbreg.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbreg.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbhw.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\usb files\usbhw.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbuser.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\usb files\usbuser.c</FilePath>
-            </File>
-            <File>
-              <FileName>adcuser.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\usb files\adcuser.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbcore.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\usb files\usbcore.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbdesc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\usb files\usbdesc.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbMain.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\usbMain.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbMain.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usbMain.h</FilePath>
-            </File>
-          </Files>
         </Group>
         <Group>
           <GroupName>::Board Support</GroupName>
@@ -1744,6 +1570,11 @@
               <FileType>5</FileType>
               <FilePath>.\KBD.h</FilePath>
             </File>
+            <File>
+              <FileName>LPC17xx.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\LPC17xx.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1771,98 +1602,6 @@
         </Group>
         <Group>
           <GroupName>USB files</GroupName>
-          <Files>
-            <File>
-              <FileName>adcuser.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\adcuser.h</FilePath>
-            </File>
-            <File>
-              <FileName>audio.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\audio.h</FilePath>
-            </File>
-            <File>
-              <FileName>type.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\type.h</FilePath>
-            </File>
-            <File>
-              <FileName>usb.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usb.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbaudio.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbaudio.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbuser.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbuser.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbcore.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbcore.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbcfg.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbcfg.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbhw.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbhw.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbdesc.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbdesc.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbreg.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usb files\usbreg.h</FilePath>
-            </File>
-            <File>
-              <FileName>usbhw.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\usb files\usbhw.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbuser.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\usb files\usbuser.c</FilePath>
-            </File>
-            <File>
-              <FileName>adcuser.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\usb files\adcuser.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbcore.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\usb files\usbcore.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbdesc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\usb files\usbdesc.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbMain.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\usbMain.c</FilePath>
-            </File>
-            <File>
-              <FileName>usbMain.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\usbMain.h</FilePath>
-            </File>
-          </Files>
         </Group>
         <Group>
           <GroupName>::Board Support</GroupName>
@@ -1882,8 +1621,8 @@
 
   <RTE>
     <apis>
-      <api Capiversion="1.00" Cclass="Board Support" Cgroup="A/D Converter" exclusive="0">
-        <package name="MDK-Middleware" schemaVersion="1.0" url="http://www.keil.com/pack/" vendor="Keil" version="5.99.5"/>
+      <api Capiversion="1.0.0" Cclass="Board Support" Cgroup="A/D Converter" exclusive="0">
+        <package license="license.rtf" name="MDK-Middleware" schemaVersion="1.4" url="http://www.keil.com/pack/" vendor="Keil" version="7.12.0"/>
         <targetInfos>
           <targetInfo name="Instruction Trace"/>
           <targetInfo name="SWO Trace"/>

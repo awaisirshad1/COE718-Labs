@@ -1,0 +1,9 @@
+.\obj\gallery.o: gallery.c
+.\obj\gallery.o: GLCD.h
+.\obj\gallery.o: LPC17xx.h
+.\obj\gallery.o: core_cm3.h
+.\obj\gallery.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\gallery.o: system_LPC17xx.h
+.\obj\gallery.o: IMG_6156.c
+.\obj\gallery.o: IMG_6157.c
+.\obj\gallery.o: IMG_6158.c

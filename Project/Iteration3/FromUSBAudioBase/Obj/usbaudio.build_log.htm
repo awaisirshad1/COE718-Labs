@@ -1,0 +1,88 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.31.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: ECBME Dept. Ryerson University Flex license: MDK Professional 5.31 (Flex): 200 user(s) (mdk_pro) Operation stops: 4 Jul 2027
+ 
+Tool Versions:
+Toolchain:       MDK Professional 5.31 (Flex): 200 user(s)  Version: 5.31.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.31.0.0
+Dialog DLL:      DARMP1.DLL V1.27.0.0
+Target DLL:      UL2CM3.DLL V1.163.4.0
+Dialog DLL:      TARMP1.DLL V1.26.0.0
+ 
+<h2>Project:</h2>
+S:\Documents\FifthYear\COE718\Project\Iteration3\FromUSBAudioBase\usbaudio.uvproj
+Project File Date:  11/26/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Flash'
+compiling usbuser.c...
+compiling usbcore.c...
+compiling usbdesc.c...
+compiling usbdmain.c...
+compiling usbhw.c...
+compiling adcuser.c...
+compiling system_LPC17xx.c...
+compiling core_cm3.c...
+assembling startup_LPC17xx.s...
+compiling GLCD_SPI_LPC1700.c...
+compiling KBD.c...
+compiling LED.c...
+compiling main.c...
+compiling mainMenu.c...
+compiling Thread.c...
+Thread.c(130): warning:  #177-D: variable "selectedImg"  was declared but never referenced
+        uint8_t selectedImg = 1;
+Thread.c: 1 warning, 0 errors
+compiling gallery.c...
+compiling game.c...
+compiling IRQ.c...
+compiling IMG_6156.c...
+IMG_6156.c(7): warning:  #177-D: variable "SELFIE_pixel_data"  was declared but never referenced
+  static const unsigned char SELFIE_pixel_data[150 * 147 * 2 + 1] =
+IMG_6156.c: 1 warning, 0 errors
+compiling IMG_6157.c...
+IMG_6157.c(7): warning:  #177-D: variable "BOARDPIC_pixel_data"  was declared but never referenced
+  static const unsigned char BOARDPIC_pixel_data[150 * 150 * 2 + 1] =
+IMG_6157.c: 1 warning, 0 errors
+compiling IMG_6158.c...
+IMG_6158.c(7): warning:  #177-D: variable "MYCODEPIC_pixel_data"  was declared but never referenced
+  static const unsigned char MYCODEPIC_pixel_data[150 * 144 * 2 + 1] =
+IMG_6158.c: 1 warning, 0 errors
+compiling RTX_Conf_CM.c...
+linking...
+.\Obj\usbaudio.axf: Error: L6218E: Undefined symbol ADC_Initialize (referred from main.o).
+.\Obj\usbaudio.axf: Error: L6218E: Undefined symbol osDelay (referred from main.o).
+.\Obj\usbaudio.axf: Error: L6218E: Undefined symbol osKernelInitialize (referred from main.o).
+.\Obj\usbaudio.axf: Error: L6218E: Undefined symbol osKernelStart (referred from main.o).
+.\Obj\usbaudio.axf: Error: L6218E: Undefined symbol osSignalSet (referred from thread.o).
+.\Obj\usbaudio.axf: Error: L6218E: Undefined symbol osSignalWait (referred from thread.o).
+.\Obj\usbaudio.axf: Error: L6218E: Undefined symbol osThreadCreate (referred from thread.o).
+.\Obj\usbaudio.axf: Error: L6218E: Undefined symbol osThreadSetPriority (referred from thread.o).
+.\Obj\usbaudio.axf: Error: L6218E: Undefined symbol ADC_StartConversion (referred from irq.o).
+.\Obj\usbaudio.axf: Error: L6218E: Undefined symbol osTimerThread (referred from rtx_conf_cm.o).
+.\Obj\usbaudio.axf: Error: L6218E: Undefined symbol os_running (referred from rtx_conf_cm.o).
+.\Obj\usbaudio.axf: Error: L6218E: Undefined symbol rt_mut_init (referred from rtx_conf_cm.o).
+.\Obj\usbaudio.axf: Error: L6218E: Undefined symbol rt_mut_release (referred from rtx_conf_cm.o).
+.\Obj\usbaudio.axf: Error: L6218E: Undefined symbol rt_mut_wait (referred from rtx_conf_cm.o).
+.\Obj\usbaudio.axf: Error: L6218E: Undefined symbol rt_tsk_self (referred from rtx_conf_cm.o).
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 0 warning and 15 error messages.
+".\Obj\usbaudio.axf" - 15 Error(s), 4 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:13
+</pre>
+</body>
+</html>

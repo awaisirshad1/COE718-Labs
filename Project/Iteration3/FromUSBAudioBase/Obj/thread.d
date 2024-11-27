@@ -1,0 +1,12 @@
+.\obj\thread.o: Thread.c
+.\obj\thread.o: cmsis_os.h
+.\obj\thread.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\thread.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\obj\thread.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\obj\thread.o: KBD.h
+.\obj\thread.o: mainMenu.h
+.\obj\thread.o: LPC17xx.h
+.\obj\thread.o: core_cm3.h
+.\obj\thread.o: system_LPC17xx.h
+.\obj\thread.o: GLCD.h
+.\obj\thread.o: gallery.h

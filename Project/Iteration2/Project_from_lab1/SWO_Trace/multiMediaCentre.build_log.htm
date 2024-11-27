@@ -29,20 +29,11 @@ Project File Date:  11/26/2024
 Rebuild target 'SWO Trace'
 compiling IRQ.c...
 compiling main.c...
-mainMenu.h(8): warning:  #1-D: last line of file ends without a newline
-  void clearCursor(unsigned int num);
-main.c(68): warning:  #550-D: variable "joyStickPrev"  was set but never used
-        uint32_t joyStickPrev = 0U;
-main.c: 2 warnings, 0 errors
 compiling mainMenu.c...
 compiling Thread.c...
-mainMenu.h(8): warning:  #1-D: last line of file ends without a newline
-  void clearCursor(unsigned int num);
-gallery.h(4): warning:  #1-D: last line of file ends without a newline
-  extern uint8_t currentPic;
-Thread.c(128): warning:  #177-D: variable "selectedImg"  was declared but never referenced
+Thread.c(127): warning:  #177-D: variable "selectedImg"  was declared but never referenced
         uint8_t selectedImg = 1;
-Thread.c: 3 warnings, 0 errors
+Thread.c: 1 warning, 0 errors
 compiling gallery.c...
 compiling game.c...
 compiling GLCD_SPI_LPC1700.c...
@@ -60,12 +51,6 @@ compiling IMG_6158.c...
 IMG_6158.c(7): warning:  #177-D: variable "MYCODEPIC_pixel_data"  was declared but never referenced
   static const unsigned char MYCODEPIC_pixel_data[150 * 144 * 2 + 1] =
 IMG_6158.c: 1 warning, 0 errors
-compiling usbhw.c...
-compiling usbuser.c...
-compiling adcuser.c...
-compiling usbcore.c...
-compiling usbdesc.c...
-compiling usbMain.c...
 compiling ADC_MCB1700.c...
 compiling Joystick_MCB1700.c...
 compiling RTX_Conf_CM.c...
@@ -75,8 +60,8 @@ compiling PIN_LPC17xx.c...
 assembling startup_LPC17xx.s...
 compiling system_LPC17xx.c...
 linking...
-Program Size: Code=17388 RO-data=139364 RW-data=220 ZI-data=16524  
-".\SWO_Trace\multiMediaCentre.axf" - 0 Error(s), 8 Warning(s).
+Program Size: Code=11312 RO-data=139056 RW-data=132 ZI-data=15788  
+".\SWO_Trace\multiMediaCentre.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -133,18 +118,18 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.4.0
 
    * Component: ARM::CMSIS:RTOS:Keil RTX:4.82.0
-      Include file:  CMSIS\RTOS\RTX\INC\cmsis_os.h
-      Include file:  CMSIS\RTOS\RTX\UserCodeTemplates\osObjects.h
-      Library file:  CMSIS\RTOS\RTX\LIB\ARM\RTX_CM3.lib
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\main.c
       Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MsgQueue.c
       Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MailQueue.c
-      Source file:   CMSIS\RTOS\RTX\SRC\ARM\SVC_Table.s
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Timer.c
-      Source file:   CMSIS\RTOS\RTX\Templates\RTX_Conf_CM.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\main.c
-      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Semaphore.c
       Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\MemPool.c
+      Include file:  CMSIS\RTOS\RTX\INC\cmsis_os.h
+      Source file:   CMSIS\RTOS\RTX\Templates\RTX_Conf_CM.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Semaphore.c
+      Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Timer.c
+      Source file:   CMSIS\RTOS\RTX\SRC\ARM\SVC_Table.s
+      Library file:  CMSIS\RTOS\RTX\LIB\ARM\RTX_CM3.lib
       Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Mutex.c
+      Include file:  CMSIS\RTOS\RTX\UserCodeTemplates\osObjects.h
       Source file:   CMSIS\RTOS\RTX\UserCodeTemplates\Thread.c
 
    * Component: Keil.ARM Compiler::Compiler:I/O:STDOUT:ITM:1.2.0
@@ -165,11 +150,11 @@ Package Vendor: Keil
       Source file:   RTE_Driver\PIN_LPC17xx.c
 
    * Component: Keil::Device:Startup:1.0.0
-      Include file:  Device\Include\LPC17xx.h
-      Source file:   Device\Source\system_LPC17xx.c
-      Include file:  RTE_Driver\Config\RTE_Device.h
       Source file:   Device\Source\ARM\startup_LPC17xx.s
-Build Time Elapsed:  00:00:26
+      Source file:   Device\Source\system_LPC17xx.c
+      Include file:  Device\Include\LPC17xx.h
+      Include file:  RTE_Driver\Config\RTE_Device.h
+Build Time Elapsed:  00:00:16
 </pre>
 </body>
 </html>

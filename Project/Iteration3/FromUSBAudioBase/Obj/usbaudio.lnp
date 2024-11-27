@@ -1,0 +1,27 @@
+--cpu Cortex-M3
+".\obj\usbuser.o"
+".\obj\usbcore.o"
+".\obj\usbdesc.o"
+".\obj\usbdmain.o"
+".\obj\usbhw.o"
+".\obj\adcuser.o"
+".\obj\system_lpc17xx.o"
+".\obj\core_cm3.o"
+".\obj\startup_lpc17xx.o"
+".\obj\glcd_spi_lpc1700.o"
+".\obj\kbd.o"
+".\obj\led.o"
+".\obj\main.o"
+".\obj\mainmenu.o"
+".\obj\thread.o"
+".\obj\gallery.o"
+".\obj\game.o"
+".\obj\irq.o"
+".\obj\img_6156.o"
+".\obj\img_6157.o"
+".\obj\img_6158.o"
+".\obj\rtx_conf_cm.o"
+--strict --scatter ".\DMA.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Lst\usbaudio.map" -o .\Obj\usbaudio.axf
