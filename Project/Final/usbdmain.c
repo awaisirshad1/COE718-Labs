@@ -123,6 +123,10 @@ void TIMER0_IRQHandler(void)
   }
 
   LPC_TIM0->IR = 1;                         /* Clear Interrupt Flag */
+	
+	// If I were to redo this project, I would check for KBD input over here and 
+	// then issue a hardware interrupt in order to allow for interrupting usb audio
+	
 }
 
 // suspend audio
